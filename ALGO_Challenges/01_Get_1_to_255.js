@@ -4,7 +4,7 @@ function get_array(startNumb,finishNumb) {
 
     for (var i = startNumb ; i = finishNumb; i++)
     {
-        arr += arr.push[i];
+        arr += arr.push(i);
     }
     return arr;
 };
