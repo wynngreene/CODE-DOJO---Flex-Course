@@ -1,0 +1,43 @@
+
+
+body {
+    margin: 3em;
+}
+
+#button-search, #button-plus, #button-create-account {
+    padding: .5em;
+    margin-bottom: 1em;
+}
+
+#button-search {
+background-color:white;
+color: mediumaquamarine;
+font-size: medium;
+text-decoration: none;
+border-color: mediumaquamarine;
+border-radius: 3em;
+padding: .25em 3em;
+border-style:solid;
+
+}
+
+#button-plus {
+    background-color:mediumaquamarine;
+    color: white;
+    font-size:x-large;
+    text-decoration: none;
+    border-radius:50%;
+    border-style: none;
+    padding: .25em .55em;
+}
+
+#button-create-account {
+    background-color: dodgerblue;
+    color: white;
+    font-size: medium;
+    text-decoration: none;
+    padding: .5em 2em;
+    border: solid black 3px;
+    -webkit-box-shadow: .25em .25em 0px 0 #000000;
+
+}
