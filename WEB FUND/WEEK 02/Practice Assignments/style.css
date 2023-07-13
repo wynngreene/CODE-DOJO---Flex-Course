@@ -1,0 +1,16 @@
+* {
+    border: 2px red dotted;
+}
+
+h1 {
+    background-color: rebeccapurple;
+    color:white;
+}
+
+.green {
+    background-color: mediumseagreen;
+}
+
+.red {
+    background-color: tomato;
+}
