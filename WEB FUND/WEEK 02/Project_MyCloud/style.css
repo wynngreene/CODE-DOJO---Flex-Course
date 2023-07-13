@@ -1,0 +1,46 @@
+*{
+    border: 1px red dotted;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+
+}
+
+#header, #content, #footer {
+    margin: 0em 0em .5em 0em;
+    padding: .5em;
+    color: white;
+}
+
+#header {
+    background-color: black;
+    text-align: left;
+    padding-left: 1em;
+
+}
+
+#header span {
+    color: cyan;
+    
+}
+
+#content {
+    background-color: blueviolet;
+    font-style: italic;
+    text-align: center;
+
+}
+
+#footer {
+    background-color: rgb(117, 169, 200);
+    color: black;
+    text-decoration: underline;
+    padding-right: 1em;
+    text-align: right;
+    
+}
