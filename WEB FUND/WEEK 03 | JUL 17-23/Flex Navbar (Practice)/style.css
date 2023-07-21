@@ -8,7 +8,8 @@
     color: white;
     background-color: rgb(54, 54, 54);
     padding: 1em;
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-links {
