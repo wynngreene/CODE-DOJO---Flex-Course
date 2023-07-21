@@ -6,7 +6,7 @@
 
 .nav {
     color: white;
-    background-color: black;
+    background-color: rgb(54, 54, 54);
     padding: 1em;
     display: inline-flex;
 }
@@ -37,4 +37,15 @@ a:hover {
 a:active {
     color: blue;
     text-decoration: none;
+}
+
+.btn {
+    background-color:darkcyan;
+    border: black;
+    color: white;
+    font-size: medium;
+    padding: .5em 1em;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
 }
