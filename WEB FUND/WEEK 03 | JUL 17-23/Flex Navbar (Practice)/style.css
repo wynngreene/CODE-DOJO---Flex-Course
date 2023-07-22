@@ -6,6 +6,8 @@
 
 .nav {
     color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
     background-color: rgb(54, 54, 54);
     padding: 1em;
     display: flex;
@@ -42,11 +44,12 @@ a:active {
 
 .btn {
     background-color:darkcyan;
-    border: black;
+    border: .2em solid black;
     color: white;
     font-size: medium;
     padding: .5em 1em;
     text-align: center;
     text-decoration: none;
     /* display: inline-block; */
+  box-shadow: .25em .25em black;
 }
