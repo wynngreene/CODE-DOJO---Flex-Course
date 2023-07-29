@@ -63,7 +63,7 @@
 #user_Profile_Image {
     height: 100px;
     border-radius: 4em;
-    position: fixed;
+    position: fixed; /* ISSSSUUE */
     top: 130px;
     left: 140px;
 }
