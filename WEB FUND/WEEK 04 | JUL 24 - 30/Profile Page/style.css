@@ -1,47 +1,97 @@
-* {
+/* * {
     border: red 1px dotted;
+}
+ */
+ * {
     margin:0;
     padding: 0;
-    
-  }
-  
-  #nav_Bar {
+    font-family: Arial;
+}
+
+#nav_Bar {
     background-color:black;
     color: white;
     display:flex;
     justify-content:space-between;
     align-items: center;
-    padding: 0 10%;
+    padding: 1em 10%;
     
-  }
-  
-  #nav_List ul {
+}
+
+#nav_List ul {
     display:flex;
+    text-decoration: none;
+    list-style-type:none;
     
-  }
-  
-  #nav_List ul li {
+}
+
+#nav_List ul li {
     margin: 0 1em;
     
-  }
-  
-  #content_Main {
+}
+
+.button {
+    background-color: #2ac7d6;
+    border: none;
+    color: white;
+    padding: .5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#content_Main {
     display:flex;
     justify-content:center;
-    margin: 0 10%;
+    margin: 1em 10% 0;
     
-  }
-  
-  #panel_left_Main {
+}
+
+#panel_left_Main {
     flex:3;
     background-color:lightblue;
     height:300px;
     
-  }
-  
-  #panel_right_Side {
-    flex:2;
-    background-color:lightpink;
-    height:300px;
+}
+
+#panel_User_Profile {
+    margin-bottom: 1em;
+}
+
+#user_Profile_Header {
+    background-color: orange;
+    border-radius: 10px 10px 0 0;
+    height: 60px;
+}
+
+#panel_right_Side {
+    flex: 2;
+    background-color: lightpink;
+    margin-left: 1em;
+    height: 300px;
     
-  }
+}
+
+.panel_Border {
+    margin-bottom: 1em;
+    
+}
+
+.panel_Header {
+    background-color: grey;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 1em;
+    
+}
+
+.panel_White {
+    background-color: white;
+    border: 2px grey solid;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    height: 7em;
+    padding: 1em;
+    
+}
