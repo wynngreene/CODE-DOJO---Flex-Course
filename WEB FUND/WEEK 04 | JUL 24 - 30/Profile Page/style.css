@@ -1,0 +1,47 @@
+* {
+    border: red 1px dotted;
+    margin:0;
+    padding: 0;
+    
+  }
+  
+  #nav_Bar {
+    background-color:black;
+    color: white;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 10%;
+    
+  }
+  
+  #nav_List ul {
+    display:flex;
+    
+  }
+  
+  #nav_List ul li {
+    margin: 0 1em;
+    
+  }
+  
+  #content_Main {
+    display:flex;
+    justify-content:center;
+    margin: 0 10%;
+    
+  }
+  
+  #panel_left_Main {
+    flex:3;
+    background-color:lightblue;
+    height:300px;
+    
+  }
+  
+  #panel_right_Side {
+    flex:2;
+    background-color:lightpink;
+    height:300px;
+    
+  }
