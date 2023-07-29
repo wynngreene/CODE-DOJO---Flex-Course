@@ -2,6 +2,24 @@
     border: red 1px dotted;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* DONT CHANGE */
+
+header {
+  background-color: black;
+  color: white;
+  padding: 1em;
+}
+
+/*     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
 img {
     max-width: 100px;
 }
@@ -12,10 +30,6 @@ img {
 
 body {
     background-color: brown;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: bisque;
 }
 
