@@ -1,6 +1,6 @@
-* {
+/* * {
     border: red 1px dotted;
-}
+} */
 
 * {
   margin: 0;
@@ -9,31 +9,39 @@
 
 /* DONT CHANGE */
 
+body {
+    background-color: brown;
+    color: bisque;
+}
+
 header {
   background-color: black;
   color: white;
   padding: 1em;
 }
 
-/*     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-
-img {
-    max-width: 100px;
+#main_content {
+  margin: 0 25%;
 }
 
-#hidden {
-    display: none;
-}
-
-body {
-    background-color: brown;
-    color: bisque;
+.challenge_template {
+    display: flex;
+    align-items: center;
+  justify-content: space-between;
+    padding:1em;
 }
 
 .button_wow {
+    margin-left: 2em;
     display:flex;
     justify-content: center;
+}
+
+.button_wow button {
+    padding: 1em;
+    margin: .5em;
+}
+
+img {
+    max-width: 100px;
 }
