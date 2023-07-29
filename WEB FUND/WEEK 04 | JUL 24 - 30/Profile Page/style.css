@@ -114,3 +114,20 @@
     padding: 1em;
     
 }
+
+.other_connections {
+    margin: 1em 0;
+}
+
+.other_connections a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.other_connections img {
+    height: 3em;
+    border-radius: 2em;
+    margin-right: 1em;
+}
