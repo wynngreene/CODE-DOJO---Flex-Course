@@ -1,9 +1,9 @@
-/* * {
-    border: red 2px dotted;
-} */
+* {
+    border: red 1px dotted;
+}
 
 img {
-    max-width: 200px;
+    max-width: 100px;
 }
 
 #hidden {
@@ -19,9 +19,7 @@ body {
     color: bisque;
 }
 
-div {
-    display: flex;
-    flex-direction: column;
+.button_wow {
+    display:flex;
     justify-content: center;
-    align-items: center;
 }
