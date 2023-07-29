@@ -59,6 +59,17 @@
     margin-bottom: 1em;
 }
 
+.user_Profile_Icons {
+    display: flex;
+    align-items: center;
+}
+
+.user_Profile_Icons img {
+    height: 1em;
+    margin-right: .5em;
+}
+
+
 #user_Profile_Header {
     background-color: orange;
     border-radius: 10px 10px 0 0;
@@ -81,9 +92,18 @@
 .panel_Header {
     background-color: grey;
     color: white;
+    display: flex;
     border-radius: 10px 10px 0 0;
     padding: 1em;
     
+}
+
+.side_Circle {
+    background-color: white;
+    padding: 0 .5em;
+    margin-right: 1em;
+    color: grey;
+    border-radius: 1em;
 }
 
 .panel_White {
@@ -91,7 +111,6 @@
     border: 2px grey solid;
     border-top: none;
     border-radius: 0 0 10px 10px;
-    height: 7em;
     padding: 1em;
     
 }
