@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px red dotted; */
+}
+
+body {
+    margin: 0 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#nav_Bar {
+    /* override spacing */
+    justify-content: space-between;
+    background-color: grey;
+    color: white;
+    padding: 1em 2em;
+    margin-bottom: 1em;
+
+}
+
+#nav_Bar input {
+    border: 2px black solid;
+
+}
+
+#content_Main {
+    display: flex;
+}
+
+#content_M_Right {
+    flex: 2;
+    margin-right: 1em;
+
+}
+
+/* #content_M_Right div:nth-child(2) {
+    margin-left: 1em;
+} */
+
+#content_M_Left {
+    flex: 1;
+    height: 250px;
+    border-radius: .5em;
+    border: 2px black solid;
+    padding: 1em;
+}
+
+#content_M_Left h2 {
+    margin-bottom: 1em;
+}
+
+.card_Right {
+    padding: 1em;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    border: 2px black solid;
+    justify-content: space-between;
+
+}
+
+.card_Display {
+    margin-right: 1em;
+}
+
+button {
+    padding: 3px 6px;
+    border: 2px black solid;
+}
+
+.btn_login {
+    background-color: blue;
+    color: white;
+}
+
+.btn_likes {
+    background-color: yellow;
+
+}
+
+.btn_add_definition {
+    width: 200px;
+    background-color: green;
+    color: white;
+}

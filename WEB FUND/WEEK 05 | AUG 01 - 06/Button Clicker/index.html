@@ -4,13 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Button Clicker</title>
 </head>
 
 <body>
+    <nav class="row" id="nav_Bar">
+        <h1>Dojo-nary</h1>
+        <form>
+            <input value="Search">
+            </input>
+        </form>
+        <button class="btn_login" onclick="logOut(this)">Login</button>
+    </nav>
     
-    <button onclick="alert('hello')">Click Me!</button>
+    <div id="content_Main">
+        <div id="content_M_Right" >
+            
+            <div class="card_Right row">
+                <div class="">
+                    <div class="card_Display column">
+                        <h2>ninja</h2>
+                        <h3>noun</h3>
+                        <p>Plural:ninjas</p>
+                        <br>
+                        <button class="btn_likes" onclick="alert('Ninja was liked!')">13 Likes</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <p>A practitioner skilled in the <a>Japanese</a> art of <a>ninjutsu</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card_Right row">
+                <div class="">
+                    <div class="card_Display column">
+                        <h2>ninja</h2>
+                        <h3>noun</h3>
+                        <p>Plural:ninjas</p>
+                        <br>
+                        <button class="btn_likes" onclick="alert('Ninja was liked!')">37 Likes</button>
+                    </div>
+                </div>
+                <div>
+                    <p>A <a>programmer</a> who breaks down problems with <a>zen</a>-like focus
+                    </p>
+                </div>
+            </div>
+            
+        </div>
 
+        <div id="content_M_Left">
+            <div class="column">
+                <h2>Dojonary is defined by YOU</h2>
+                
+                <button class="btn_add_definition" onclick="hide(this)">Add Definition</button>
+            </div>
+        </div>
+    </div>
 </body>
     <script src="script.js"></script>
+
 </html>
