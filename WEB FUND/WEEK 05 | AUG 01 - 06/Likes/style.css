@@ -34,15 +34,23 @@ body {
 
 #your_feed {
     padding: 1em;
+    text-align: center;
 }
 
 #content_main {
     display: flex;
+    align-items: normal;
 }
 
 #content_left {
     flex: 1;
     margin-right: 1em;
+    border: 2px black solid;
+    padding: 1em;
+}
+
+#content_left img, #content_left h3, #content_left p {
+    margin: .5em;
 }
 
 #content_right {
@@ -58,10 +66,18 @@ body {
 
 #user_Name_Like {
     justify-content: space-between;
+    margin-bottom: 1em;
 
 }
 
 button {
     margin-left: 1em;
     padding: .5em 1em;
+    border: 2px black solid;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+
 }
