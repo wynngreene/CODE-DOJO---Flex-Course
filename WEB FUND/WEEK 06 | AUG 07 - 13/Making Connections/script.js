@@ -1,17 +1,16 @@
 console.log("page loaded...");
 
-// Hidden Elements of User Todd and Phil
-// function hidden(element) {
-//     var add_user_Todd = document.getElementById("add_user_todd");
-//     var add_user_Phil = document.getElementById("add_user_phil");
+// Edit button to change name
 
-//     if(element = add_user_Todd){
+let edit_name = document.querySelector("#edit_user_name");
 
-//     }
-//     else if(element = add_user_Phil){
+function btn_change_name(){
+    
+    console.log(edit_name);
+    edit_name.innerText = "Bilbo Baggins";
 
-//     }
-// }
+
+}
 
 document.getElementById("hidden_todd").style.visibility = "hidden";
 document.getElementById("hidden_phil").style.visibility = "hidden";
