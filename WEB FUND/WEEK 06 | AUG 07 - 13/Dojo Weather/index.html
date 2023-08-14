@@ -13,20 +13,18 @@
 <body>
 
     <!-- navbar -->
-    <div id="nav">
-        <div>
+    <div id="nav" class="row">
             <h1>Dojo Weather</h1>
             <ul id="nav-links" class="row">
                 <li><a href="#" class="active">Burbank</a></li>
                 <li><a href="#"></a>Chicago</li>
                 <li><a href="#"></a>Dallas</li>
             </ul>
-        </div>
     </div>
 
     <!-- main content -->
     <div id="main">
-        <div class="row">
+        <div class="row" id="weather_title">
             <h1>San Jose</h1>
             <span class="row">
                 <p>show temperature in</p>
@@ -34,55 +32,57 @@
             </span>
         </div>
 
+        <!-- weather cards -->
         <div id="weather_card_deck" class="row">
                 <div class="weather_cards column">
                     <h3>Today</h3>
-                    <img src="" alt="">
+                    <img src="./assets/some_rain.png" alt="some rain">
                     <p>some rain</p>
                     <span class="row">
-                        <h3>24</h3>
-                        <h3>18</h3>
+                        <h3 class="temp_red">24</h3>
+                        <h3 class="temp_blue">18</h3>
                     </span>
                 </div>
 
                 <div class="weather_cards column">
                     <h3>Tomorrow</h3>
-                    <img src="" alt="">
+                    <img src="./assets/some_sun.png" alt="some sun">
                     <p>some sun</p>
                     <span class="row">
-                        <h3>27</h3>
-                        <h3>19</h3>
+                        <h3 class="temp_red">27</h3>
+                        <h3 class="temp_blue">19</h3>
                     </span>
                 </div>
 
                 <div class="weather_cards column">
                     <h3>Friday</h3>
-                    <img src="" alt="">
+                    <img src="./assets/some_clouds.png" alt="some cloud">
                     <p>some clouds</p>
                     <span class="row">
-                        <h3>21</h3>
-                        <h3>16</h3>
+                        <h3 class="temp_red">21</h3>
+                        <h3 class="temp_blue">16</h3>
                     </span>
                 </div>
 
                 <div class="weather_cards column">
                     <h3>Saturday</h3>
-                    <img src="" alt="">
+                    <img src="./assets/some_sun.png" alt="some sun">
                     <p>some sun</p>
                     <span class="row">
-                        <h3>26</h3>
-                        <h3>21</h3>
+                        <h3 class="temp_red">26</h3>
+                        <h3 class="temp_blue">21</h3>
                     </span>
                 </div>
         </div>
 
-        <div class="hidden row">
-            <img src="" alt="cookie">
+        <!-- cookie alert -->
+        <div class="hidden row " id="alert_cookie">
+            <img src="./assets/cookie.png" alt="cookie">
             <div>
                 <h3>Stop! Cookie time</h3>
                 <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide media feature and to analyseour traffic. <a>Read more...</a></p>
             </div>
-            <button>I Accept</button>
+            <button id="button_cookie" onclick="btn_cookie()">I Accept</button>
         </div>
 
     </div>
