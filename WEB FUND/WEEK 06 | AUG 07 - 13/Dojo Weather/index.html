@@ -28,12 +28,13 @@
             <h1>San Jose</h1>
             <span class="row">
                 <p>show temperature in</p>
-                <label>
-                    <select onchange="change_temp(this)">
-                        <option> °C </option>
-                        <option> °F </option>
+                <form>
+                    <select id="change_temp" onchange="btn_change_temp()">
+                        <option value="option_c"> °C </option>
+                        <option value="option_f"> °F </option>
+                        <option value="option_n"> °0 </option>
                     </select>
-                </label>
+                </form>
             </span>
         </div>
 
@@ -44,8 +45,8 @@
                     <img src="./assets/some_rain.png" alt="some rain">
                     <p>some rain</p>
                     <span class="row">
-                        <h3 class="temp_red">24°</h3>
-                        <h3 class="temp_blue">18°</h3>
+                        <h3 class="temp_red" id="red_today">24°</h3>
+                        <h3 class="temp_blue" id="blue_today">18°</h3>
                     </span>
                 </div>
 
@@ -54,8 +55,8 @@
                     <img src="./assets/some_sun.png" alt="some sun">
                     <p>some sun</p>
                     <span class="row">
-                        <h3 class="temp_red">27°</h3>
-                        <h3 class="temp_blue">19°</h3>
+                        <h3 class="temp_red" id="red_tomorrow">27°</h3>
+                        <h3 class="temp_blue" id="blue_tomorrow">19°</h3>
                     </span>
                 </div>
 
@@ -64,8 +65,8 @@
                     <img src="./assets/some_clouds.png" alt="some cloud">
                     <p>some clouds</p>
                     <span class="row">
-                        <h3 class="temp_red">21°</h3>
-                        <h3 class="temp_blue">16°</h3>
+                        <h3 class="temp_red" id="red_friday">21°</h3>
+                        <h3 class="temp_blue" id="blue_friday">16°</h3>
                     </span>
                 </div>
 
@@ -74,20 +75,20 @@
                     <img src="./assets/some_sun.png" alt="some sun">
                     <p>some sun</p>
                     <span class="row">
-                        <h3 class="temp_red">26°</h3>
-                        <h3 class="temp_blue">21°</h3>
+                        <h3 class="temp_red" id="red_saturday">26°</h3>
+                        <h3 class="temp_blue" id="blue_saturday">21°</h3>
                     </span>
                 </div>
         </div>
 
         <!-- cookie alert -->
-        <div class="hidden row " id="alert_cookie">
+        <div class="row " id="alert_cookie">
             <img src="./assets/cookie.png" alt="cookie">
             <div>
                 <h3>Stop! Cookie time</h3>
                 <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide media feature and to analyseour traffic. <a>Read more...</a></p>
             </div>
-            <button id="button_cookie" onclick="btn_cookie()">I Accept</button>
+            <button id="button_cookie" onclick="btn_cookie_hidden()">I Accept</button>
         </div>
 
     </div>
