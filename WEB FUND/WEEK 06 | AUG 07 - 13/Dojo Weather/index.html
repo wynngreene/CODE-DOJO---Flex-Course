@@ -16,7 +16,7 @@
     <div id="nav" class="row">
             <h1>Dojo Weather</h1>
             <ul id="nav-links" class="row">
-                <li><a href="#" class="active">Burbank</a></li>
+                <li><a href="#" class="active" onclick="btn_city(this)">Burbank</a></li>
                 <li><a href="#"></a>Chicago</li>
                 <li><a href="#"></a>Dallas</li>
             </ul>
@@ -28,7 +28,12 @@
             <h1>San Jose</h1>
             <span class="row">
                 <p>show temperature in</p>
-                <button>C & F</button>
+                <label>
+                    <select onchange="change_temp(this)">
+                        <option> °C </option>
+                        <option> °F </option>
+                    </select>
+                </label>
             </span>
         </div>
 
@@ -39,8 +44,8 @@
                     <img src="./assets/some_rain.png" alt="some rain">
                     <p>some rain</p>
                     <span class="row">
-                        <h3 class="temp_red">24</h3>
-                        <h3 class="temp_blue">18</h3>
+                        <h3 class="temp_red">24°</h3>
+                        <h3 class="temp_blue">18°</h3>
                     </span>
                 </div>
 
@@ -49,8 +54,8 @@
                     <img src="./assets/some_sun.png" alt="some sun">
                     <p>some sun</p>
                     <span class="row">
-                        <h3 class="temp_red">27</h3>
-                        <h3 class="temp_blue">19</h3>
+                        <h3 class="temp_red">27°</h3>
+                        <h3 class="temp_blue">19°</h3>
                     </span>
                 </div>
 
@@ -59,8 +64,8 @@
                     <img src="./assets/some_clouds.png" alt="some cloud">
                     <p>some clouds</p>
                     <span class="row">
-                        <h3 class="temp_red">21</h3>
-                        <h3 class="temp_blue">16</h3>
+                        <h3 class="temp_red">21°</h3>
+                        <h3 class="temp_blue">16°</h3>
                     </span>
                 </div>
 
@@ -69,8 +74,8 @@
                     <img src="./assets/some_sun.png" alt="some sun">
                     <p>some sun</p>
                     <span class="row">
-                        <h3 class="temp_red">26</h3>
-                        <h3 class="temp_blue">21</h3>
+                        <h3 class="temp_red">26°</h3>
+                        <h3 class="temp_blue">21°</h3>
                     </span>
                 </div>
         </div>
@@ -87,6 +92,6 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
