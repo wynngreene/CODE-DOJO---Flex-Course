@@ -17,13 +17,15 @@
 // Using a loop write code that will console.log all of the values that are 
 // evenly divisible by 3 from 100 down to 0.
 
-// function decreaseMultiples() {
-//     for (let i = 10; i < 1; i--){
-//         console.log(i);
-//     }
-// }
-// decreaseMultiples();
+function decreaseByThree() {
 
+    for (let i = 100; i > 0; i-- ){
+        if (i % 3 == 0){
+            console.log(i);
+        }
+    }
+}
+decreaseByThree()
 
 // 3. Print the sequence
 // Using a loop write code that will console.log the values in this sequence 4, 2.5, 1, -0.5, -2, -3.5.
@@ -57,12 +59,12 @@
 // Write code that will multiply all of the values from 1-12 onto some variable product and
 // at the end console.log the result 1 * 2 * 3 * ... * 10 * 11 * 12. We should get back 479001600 at the end.
 
-function multiByFive() {
+// function multiByFive() {
 
-    currentValue = 1;
-    for(i = 1; i < 13; i++){
-        currentValue = currentValue * i;
-        console.log(currentValue);
-    }
-}
-multiByFive();
+//     currentValue = 1;
+//     for(i = 1; i < 13; i++){
+//         currentValue = currentValue * i;
+//         console.log(currentValue);
+//     }
+// }
+// multiByFive();
