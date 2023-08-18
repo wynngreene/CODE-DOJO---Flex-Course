@@ -28,6 +28,17 @@
 // 3. Print the sequence
 // Using a loop write code that will console.log the values in this sequence 4, 2.5, 1, -0.5, -2, -3.5.
 
+// function printSeq() {
+//     const myArray = [4, 2.5, 1, -0.5, -2, -3.5];
+//     let = currentNum = 0;
+//     for (i = 0; i < myArray.length; i++){
+
+//         currentNum = myArray[i];
+        
+//         console.log(currentNum);
+//     }
+// }
+// printSeq();
 
 // 4. Sigma
 // Write code that will add all of the values from 1-100 onto some variable sum and
