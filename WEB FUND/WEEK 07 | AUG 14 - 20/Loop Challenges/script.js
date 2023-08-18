@@ -1,8 +1,15 @@
-// owing challenges and upload your work when done.
+// Get comfortable with loops: for and while.
+// Get comfortable with conditionals: if/else.
 
 // 1. Print odds 1-20
 // Using a loop write code that will console.log all of the odd values from 1 up to 20.
-
+function printOdds() {
+    for ( let i = 1; i <21; i++){
+        if(i % 2 != 0)
+        console.log(i);
+    }
+}
+// printOdds();
 
 // 2. Decreasing Multiples of 3
 // Using a loop write code that will console.log all of the values that are 
