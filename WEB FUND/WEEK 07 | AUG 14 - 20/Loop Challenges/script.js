@@ -3,17 +3,26 @@
 
 // 1. Print odds 1-20
 // Using a loop write code that will console.log all of the odd values from 1 up to 20.
-function printOdds() {
-    for ( let i = 1; i <21; i++){
-        if(i % 2 != 0)
-        console.log(i);
-    }
-}
+
+// function printOdds() {
+//     for (let i = 1; i < 21; i++){
+//         if (i % 2 != 0)
+//         console.log(i);
+//     }
+// }
 // printOdds();
+
 
 // 2. Decreasing Multiples of 3
 // Using a loop write code that will console.log all of the values that are 
 // evenly divisible by 3 from 100 down to 0.
+
+// function decreaseMultiples() {
+//     for (let i = 10; i < 1; i--){
+//         console.log(i);
+//     }
+// }
+// decreaseMultiples();
 
 
 // 3. Print the sequence
