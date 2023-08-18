@@ -43,7 +43,15 @@
 // 4. Sigma
 // Write code that will add all of the values from 1-100 onto some variable sum and
 // at the end console.log the result 1 + 2 + 3 + ... + 98 + 99 + 100. We should get back 5050 at the end.
+// function addSigma() {
+//     totalSum = 0;
 
+//     for (i = 1; i < 101; i++){
+//         totalSum = totalSum + i;
+//         console.log(totalSum);
+//     }
+// }
+// addSigma();
 
 // 5. Factorial
 // Write code that will multiply all of the values from 1-12 onto some variable product and
