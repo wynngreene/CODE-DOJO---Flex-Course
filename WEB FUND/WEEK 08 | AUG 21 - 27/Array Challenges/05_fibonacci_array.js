@@ -1,3 +1,5 @@
+//PROGRESS
+
 function fibonacciArray(n) {
     // the [0, 1] are the starting values of the array to calculate the rest from
     var fibArr = [0, 1];

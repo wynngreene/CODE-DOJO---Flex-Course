@@ -1,9 +1,13 @@
-function betterThanAverage(arr) {
-    var sum = 0;
-    // calculate the average
-    var count = 0
-    // count how many values are greated than the average
-    return count;
+//DONE
+
+function reverse(arr) {
+    // your code here
+    arr.reverse();
+
+    console.log(arr);
+    return arr;
 }
-var result = betterThanAverage([6, 8, 3, 10, -2, 5, 9]);
-console.log(result); // we expect back 4
+// var result = reverse(["a", "b", "c", "d", "e"]);
+// console.log(result); // we expect back ["e", "d", "c", "b", "a"]
+
+reverse(["a", "b", "c", "d", "e"]); 

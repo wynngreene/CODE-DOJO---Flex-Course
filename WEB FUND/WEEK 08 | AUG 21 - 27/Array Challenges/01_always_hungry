@@ -1,3 +1,5 @@
+//PROGRESS
+
 function alwaysHungry(arr) {
     // your code here
     let yumArray = [];
