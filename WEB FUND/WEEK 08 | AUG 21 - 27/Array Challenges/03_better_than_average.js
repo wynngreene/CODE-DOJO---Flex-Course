@@ -1,19 +1,14 @@
 // DONE
 
 function betterThanAverage(arr) {
-
     var sum = 0;
-
     for (let i = 0;i < arr.length; i++){
         sum = arr[i] + sum;
         //console.log(sum);
     }
-
     let averageNum = sum / arr.length;
     //console.log(averageNum);
-
     var count = 0;
-
     for (let i = 0;i < arr.length; i++){
         if(arr[i] > averageNum){
             count++;
