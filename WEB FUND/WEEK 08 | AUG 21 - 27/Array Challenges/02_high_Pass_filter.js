@@ -1,3 +1,5 @@
+//DONE
+
 function highPass(arr, cutoff) {
 
     var filteredArr = [];
