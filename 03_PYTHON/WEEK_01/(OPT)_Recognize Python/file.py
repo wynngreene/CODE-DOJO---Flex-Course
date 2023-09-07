@@ -5,32 +5,32 @@ string = 'Hello World' # Data type/ primitive/ Strings
 pizza_toppings = ['Pepperoni', 'Sausage', 'Jalepenos', 'Cheese', 'Olives'] #Composite /List
 person = {'name': 'John', 'location': 'Salt Lake', 'age': 37, 'is_balding': False}  #Composite /List
 fruit = ('blueberry', 'strawberry', 'banana') #Composite /List
-print(type(fruit))
-print(pizza_toppings[1])
-pizza_toppings.append('Mushrooms')
-print(person['name'])
-person['name'] = 'George'
-person['eye_color'] = 'blue'
+print(type(fruit)) #
+print(pizza_toppings[1]) #
+pizza_toppings.append('Mushrooms') #
+print(person['name']) #
+person['name'] = 'George' #
+person['eye_color'] = 'blue' #
 print(fruit[2])
 
 if num1 > 45:
-    print("It's greater")
+    print("It's greater") #
 else:
-    print("It's lower")
+    print("It's lower") #
 
 if len(string) < 5:
-    print("It's a short word!")
+    print("It's a short word!") #
 elif len(string) > 15:
-    print("It's a long word!")
+    print("It's a long word!") #
 else:
-    print("Just right!")
+    print("Just right!") #
 
 for x in range(5):
-    print(x)
+    print(x) #
 for x in range(2,5):
-    print(x)
+    print(x) #
 for x in range(2,10,3):
-    print(x)
+    print(x) #
 x = 0
 while(x < 5):
     print(x)
