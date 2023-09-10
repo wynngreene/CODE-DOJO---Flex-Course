@@ -48,12 +48,12 @@ print("Connected")
 # be_cheerful(repeat=3, name="kb")# output: good morning kb (repeated on 3 lines)
 
 def multiply(num_list, num):
-    for x in num_list:
-        x *= num
+    for x in range(len(num_list)):
+        num_list[x] *= num
     return num_list
+
 a = [2,4,10,16]
 b = multiply(a,5)
 print(b)
-# output:
->>>[2,4,10,16]
+
 
