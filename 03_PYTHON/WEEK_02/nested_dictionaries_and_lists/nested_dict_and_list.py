@@ -68,6 +68,7 @@ dojo = {
 #04.Iterate Through a Dictionary with List Values
 def printInfo(some_dict):
     num_Loc = len(dojo["locations"])
+    print("-------------")
     print(str(num_Loc) + " LOCATIONS")
     for x in range(0,num_Loc,1):
         print(dojo["locations"][x])
