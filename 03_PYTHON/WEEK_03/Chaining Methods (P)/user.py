@@ -16,13 +16,14 @@ class User:
         print(self.age)
         print(self.is_rewards_member)
         print(self.gold_card_points)
+        return self
         
         
     def enroll(self):
         if self.is_rewards_member == False:
             self.is_rewards_member = True
             self.gold_card_points = 200
-            return
+            return self
         else:
             print("User already a member.")
     
@@ -31,11 +32,12 @@ class User:
         if self.gold_card_points < 0:
             self.gold_card_points += amount
             print("Not enough pts.")
+            return self
 
 #----------------------
 
-user_01_hobbit = User("Bilbo", "Baggins", "ring_dude@email.com", 32, )
-user_02_sponge = User("Bob", "SquarePants", "pineappplepen@email.com", 35, )
+user_01_hobbit = User("Bilbo", "Baggins", "ring_dude@email.com", 32)
+user_02_sponge = User("Bob", "SquarePants", "pineappplepen@email.com", 35)
 user_03_turtle = User("Leo", "Nardo", "blueshell@email.com", 15)
 
 # user_01_hobbit.enroll()
@@ -53,4 +55,6 @@ user_03_turtle = User("Leo", "Nardo", "blueshell@email.com", 15)
 # print("-------------")
 # print(user_03_turtle.display_info())
 
-user_01_hobbit.display_info().enroll()
+user_01_hobbit.enroll().display_info().spend_points(30)
+user_02_sponge.enroll().display_info()
+user_03_turtle.enroll().display_info()
