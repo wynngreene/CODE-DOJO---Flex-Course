@@ -42,16 +42,41 @@ class User:
         self.email = email
         self.account = BankAccount(int_rate=0.02, balance=0)
     
-    def deposit(self, amount):
-        self.balance = self.balance + amount
+    def make_deposit(self, amount):
+        self.account.balance = self.account.balance + amount
+        print(f"New Balance:{self.account.balance}")
         return self
     
-    def example_method(self):
-        self.account.deposit(100)
-        print(self.account.balance)
+    def make_withdrawal(self,amount):
+        if BankAccount.can_withdraw(self.account.balance,amount):
+            self.account.balance -= amount
+        else:
+            print("Insufficient funds: Charging a $5 fee")
+            self.account.balance -= amount
+            self.account.balance -= 5
+        return self
+    
+    # def example_method(self):
+    #     self.account.balance.deposit(100)
+    #     print(self.account.balance)
+    #     return self
 
+    def user_display_balance(self):
+        print(self.name)
+        print(self.email)
+        print(self.account.balance)
 
 print("----------")
 user_01_Ashley = User("Ashley", "ashley@gmail.com")
+user_01_Ashley.user_display_balance()
 print("----------")
-user_01_Ashley.example_method().
+user_01_Ashley.make_deposit(100)
+user_01_Ashley.user_display_balance()
+print("----------")
+user_01_Ashley.make_withdrawal(110)
+user_01_Ashley.user_display_balance()
+print("----------")
+
+
+
+
