@@ -1,4 +1,4 @@
-SELECT ninjas.first_name, ninjas.last_name, dojos.name
-FROM ninjas
-JOIN dojos ON dojos.id = ninjas.dojo_id
-WHERE ninjas_id = 6;
+SELECT * 
+FROM users
+JOIN favorites ON users.id = favorites.user_id
+JOIN  books ON books.id = favorites.book_id;
