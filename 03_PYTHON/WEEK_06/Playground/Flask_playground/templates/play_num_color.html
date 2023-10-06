@@ -8,13 +8,14 @@
 </head>
 <body>
     <h3 class="center">Welcome!</h3>
-    <p>Multiply: {{ multiple }}</p>
-    <p>Color: {{ color }}</p>
+    <p>Multiply: {{ multiple_02 }}</p>
+    <p>Color: {{ color_02 }}</p>
     
     <div class="container">
-        <div class="box">a Box</div>
-        <div class="box">a Box</div>
-        <div class="box">a Box</div>
+
+        {% for x in range(0, multiple_02): %}
+            <div class="box">a Box</div>
+        {% endfor %}
     </div>
 
 </body>
