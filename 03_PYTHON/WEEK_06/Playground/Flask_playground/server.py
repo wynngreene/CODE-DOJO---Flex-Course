@@ -19,7 +19,7 @@ def play_number(multiple_01):
     return render_template("play_num.html",multiple_02=multiple_01)
 
 # 03 PAGE
-@app.route('/play/<int:multiple_01>/<string:color_01') 
+@app.route('/play/<int:multiple_01>/<string:color_01>') 
 def play_num_color(multiple_01, color_01):
     return render_template("play_num_color.html",multiple_02=multiple_01, color_02=color_01)
 
