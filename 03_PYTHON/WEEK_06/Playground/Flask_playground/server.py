@@ -9,14 +9,19 @@ def index():
     return render_template("index.html")  # Return the string 'Hello World!' as a response
 
 # 02 PAGE
-@app.route('/hello/') 
-def hello():
-    return render_template("hello.html", phrase="heyeah", times=3)
-
-# 03 PAGE
 @app.route('/play/') 
 def play():
     return render_template("play.html")
+
+# 03 PAGE
+@app.route('/play/<int:multiple>') 
+def play_number(multiple):
+    return render_template("play_num.html",multiple)
+
+# 03 PAGE
+@app.route('/play/<int:multiple>/<string:color') 
+def play_num_color(multiple,color):
+    return render_template("play_num_color.html",multiple,color)
 
 
 # END CAP
