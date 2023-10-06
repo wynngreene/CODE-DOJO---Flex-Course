@@ -16,8 +16,9 @@ color: #444;
 }
 
 .box {
-    background-color: red;
+    background-color: lightblue;
     border: black 4px solid;
+    text-align: center;
     padding: 2em;
     margin: 1em;
     width: 5em;
