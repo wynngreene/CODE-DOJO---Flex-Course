@@ -6,27 +6,27 @@ app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 # 00 PAGE
 @app.route('/')          # The "@" decorator associates this route with the function immediately following
 def index():
-    return render_template("index.html")  # Return the string 'Hello World!' as a response
+    return render_template("index.html", x_row=8, y_col=8, color_01="red", color_02="blue")  # Return the string 'Hello World!' as a response
 
 # 01 PAGE
-@app.route('/<int:multiple_01>/') 
-def checker_x(multiple_01):
-    return render_template("checker_x.html",x_number=multiple_01)
+@app.route('/<int:x>/') 
+def checker_x(x):
+    return render_template("index.html", x_row=x, y_col=8, color_01="red", color_02="blue")
 
 # 02 PAGE
-@app.route('/<int:multiple_01>/<int:multiple_02>') 
-def checker_x_y(multiple_01, multiple_02):
-    return render_template("checker_x_y.html",x_number=multiple_01, y_number=multiple_02)
+@app.route('/<int:x>/<int:y>')
+def checker_x_y(x, y):
+    return render_template("index.html",x_row=x, y_col=y, color_01="red", color_02="blue")
 
 # 03 PAGE
-@app.route('/<int:multiple_01>/<int:multiple_02>/<string:color_01>') 
-def checker_x_y_a(multiple_01,multiple_02, color_01):
-    return render_template("checker_x_y_a.html",x_number=multiple_01, y_number=multiple_02, a_color=color_01)
+@app.route('/<int:x>/<int:y>/<string:color_01>') 
+def checker_x_y_a(x,y, first):
+    return render_template("index.html",x_row=x, y_col=y, color_01=first, color_02="blue")
 
 # 04 PAGE
-@app.route('/<int:multiple_01>/int:multiple_02>/<string:color_01>/<string:color_02>') 
-def checker_x_y_a_b(multiple_01,multiple_02, color_01, color_02):
-    return render_template("checker_x_y_a_b.html",x_number=multiple_01, y_number=multiple_02, a_color=color_01, b_color=color_02)
+@app.route('/<int:x>/int:y>/<string:color_01>/<string:color_02>') 
+def checker_x_y_a_b(x,y, first, second):
+    return render_template("index.html",x_row=x, y_col=y, color_01=first, color_02=second)
 
 # END CAP
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    

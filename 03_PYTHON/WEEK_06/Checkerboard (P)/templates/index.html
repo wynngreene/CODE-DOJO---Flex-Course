@@ -12,14 +12,38 @@
 </head>
 <body>
     <h3>My Checkerboard</h3>
-    <p id="x_squares"> 00 </p>
-    <p id="y_squares"> 00 </p>
-    <p id="color_sqr_01"> (No color 1)</p>
-    <p id="color_sqr_02">(No color 2)</p>
+    <table>
+        <tr>
+            <td>X:</td>
+            <td>
+                <p id="x_squares"> {{ x_row }}</p>
+            </td>
+            <td>| Y:</td>
+            <td>
+                <p id="y_squares">{{ y_col }}</p>
+            </td>
+            <td>| Color 01:</td>
+            <td>
+                <p id="color_sqr_01"> {{ color_01 }}</p>
+            </td>
+            <td>| Color 02:</td>
+            <td>
+                <p id="color_sqr_02">{{ color_02 }}</p>
+            </td>
+        </tr>
+    </table>
 
     <div id="container">
         <div id="checkerboard">
-
+        <table>
+        {% for i in range(x_row): %}
+            <tr>
+            {% for j in range(y_col): %}
+                <td class="color{{ (i+j)%2+1 }}"></td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
         </div>
     </div>
 

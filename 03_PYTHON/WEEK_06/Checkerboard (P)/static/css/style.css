@@ -1,3 +1,13 @@
 body {
     background-color: antiquewhite;
 }
+
+.color1{
+    background-color: blue;
+    width: 3em;
+    height: 3em;}
+
+.color2{
+    background-color: red;
+    width: 3em;
+    height: 3em;}
