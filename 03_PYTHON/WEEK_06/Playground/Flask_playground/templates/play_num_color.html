@@ -8,10 +8,11 @@
 </head>
 <body>
     <h3 class="center">Welcome!</h3>
-    <p>Multiply: {{ multiple_02 }}</p>
-    <p>Color: {{ color_02 }}</p>
-    
-    <div class="container">
+    <p id="find_number"> {{ multiple_02 }}</p>
+    <p id="find_color">{{ color_02 }}</p>
+    <button onclick="myFunction()">Color Me!</button>
+
+    <div id="container">
 
         {% for x in range(0, multiple_02): %}
             <div class="box" id="change_color">BOX</div>
