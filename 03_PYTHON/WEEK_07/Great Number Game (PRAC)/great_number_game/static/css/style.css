@@ -7,12 +7,11 @@ body {
 
 .my_box {
     text-align: center;
-    width: 200px;
+    width: 300px;
     border: solid black;
     padding: 1em;
     margin-bottom: 2em;
     border-radius: 1em;
-    display: none;
 }
 
 .my_box_red {

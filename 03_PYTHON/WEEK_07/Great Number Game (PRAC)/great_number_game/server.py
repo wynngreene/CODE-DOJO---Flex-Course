@@ -8,16 +8,14 @@ app.secret_key = 'secret_safe.'
 # 01 PAGE
 @app.route('/')
 def index():
-    
     if "save_num" not in session:
         session["save_num"] = random.randint(1, 100)
-    print(session["save_num"])
-
+    # print(session["save_num"])
     return render_template("index.html")
 
 @app.route('/guess', methods=["POST"])
 def guess():
-    session["save_num"] = int(request.form["guess_num"])
+    session["guess_num"] = int(request.form["guess_num"])
     return redirect ('/')
 
 @app.route('/reset')

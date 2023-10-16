@@ -16,20 +16,19 @@
     <h1>Welcome to the Great Number Game!</h1>
     <p>I am thinking of a number between 1 and 100</p>
     <div>
-    <p>Take a guess!</p>
-    <p>{{ session["save_num"] }}</p> <p>{{ submit_num }}</p>
-    <form action="/guess" method="post">
-        <input type="text" name="guess_num" id="guess_num" class="">
-        <a type="submit" value="Guess" class="btn btn-primary">Submit</a>
-    </form>
-
+        <form action="/guess" method="post" class="">
+            <label for="guess_num">Take a Guess!</label>
+            <input type="text" name="guess_num" id="guess_num" class="">
+            <input type="submit" value="Guess" class="btn btn-primary">
+        </form>
     </div>
-    <br>
+        <p>{{ session["save_num"] }}</p>
+
     {% if "guess_num" in session: %}
         {% if session["guess_num"] == session["save_num"] %}
             <div class="my_box my_box_green">
                 <p>?? was the Number!</p>
-                <a class="btn btn-primary">Play Again</a>
+                <a href="/reset" class="btn btn-primary">Play Again</a>
             </div>
         {% elif session["guess_num"] > session["save_num"] %}
             <div class="my_box my_box_red">
