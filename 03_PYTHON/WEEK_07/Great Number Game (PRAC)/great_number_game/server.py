@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, redirect
+from flask import Flask, render_template, session, redirect, request
 import random
 app = Flask(__name__)    
 app.secret_key = 'secret_safe.'
@@ -8,21 +8,22 @@ app.secret_key = 'secret_safe.'
 # 01 PAGE
 @app.route('/')
 def index():
-    save_num = random.randint(1, 100)
-    print(save_num)
-
+    
+    if "save_num" not in session:
+        session["save_num"] = random.randint(1, 100)
+    print(session["save_num"])
 
     return render_template("index.html")
 
-# @app.route('/increment')
-# def increment():
-#     session["visit"] += 1
-#     return redirect ('/')
+@app.route('/guess', methods=["POST"])
+def guess():
+    session["save_num"] = int(request.form["guess_num"])
+    return redirect ('/')
 
-# @app.route('/reset')
-# def reset():
-#     session.clear()
-#     return redirect ('/')
+@app.route('/reset')
+def reset():
+    session.clear()
+    return redirect ('/')
 
 
 # END CAP
