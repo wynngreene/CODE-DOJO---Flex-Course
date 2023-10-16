@@ -1,0 +1,17 @@
+body {
+    background-color: antiquewhite;
+    font-family: none;
+    font-family: "Gill Sans Extrabold", sans-serif;
+    font-size: larger;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: .5em;
+}
+
+table th {
+    background-color: black;
+    color: white;
+}

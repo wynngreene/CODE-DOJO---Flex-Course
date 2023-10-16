@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- <img src="{{ url_for('static', filename='img/my_img.png') }}"> -->
+
+    <title>Great Number Game</title>
+</head>
+<body class="container ">
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <div>
+    <p>Take a guess!</p>
+    <p>{{save_num}}</p>
+    <form>
+        <input>
+        <a href="" class="btn btn-primary">Submit</a>
+    </form>
+
+    </div>
+    <br>
+    <div class="my_box my_box_red">
+        <p>Too High</p>
+    </div>
+    <div class="my_box my_box_red">
+        <p>Too Low</p>
+    </div>
+    <div class="my_box my_box_green">
+        <p>?? was the Number!</p>
+        <a class="btn btn-primary">Play Again</a>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

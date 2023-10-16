@@ -1,0 +1,23 @@
+body {
+    background-color: antiquewhite;
+    font-family: none;
+    font-family: "Gill Sans Extrabold", sans-serif;
+    font-size: larger;
+}
+
+.my_box{
+    text-align: center;
+    width: 200px;
+    border: solid black;
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 1em;
+}
+
+.my_box_red {
+    background-color: red;
+}
+
+.my_box_green {
+    background-color: green;
+}
