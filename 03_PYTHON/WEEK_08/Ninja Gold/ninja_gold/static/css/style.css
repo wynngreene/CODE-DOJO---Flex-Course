@@ -1,0 +1,31 @@
+body {
+    background-color: antiquewhite;
+    font-family: none;
+    font-family: "Gill Sans Extrabold", sans-serif;
+    font-size: small;
+}
+
+.box_all {
+    display:flex;
+    align-items: center;
+}
+
+.box_gold {
+    text-align: center;
+
+}
+
+.bar_gold {
+    background-color: beige;
+    border: 2px solid black;
+    border-radius: .5em;
+    padding: .5em;
+    width: 300px;
+    margin-left: .5em;
+
+}
+
+img {
+    height: 50px;
+    margin-bottom: 2em;
+}
