@@ -1,7 +1,7 @@
 # import the function that will return an instance of a connection
 from mysqlconnection import connectToMySQL
 # model the class after the friend table from our database
-class Friend:
+class User:
     def __init__( self , data ):
         self.id = data['id']
         self.first_name = data['first_name']

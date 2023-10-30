@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect
 # import the class from friend.py
-from friend import Friend
+from user import User
 app = Flask(__name__)
 
 @app.route("/")
 def index():
     # call the get all classmethod to get all friends
-    friends = Friend.get_all()
+    friends = User.get_all()
     print(friends)
     return render_template("index.html", all_friends=friends)
 
@@ -20,7 +20,7 @@ def create_friend():
         "occ" : request.form["occ"]
     }
     # We pass the data dictionary into the save method from the Friend class.
-    Friend.save(data)
+    User.save(data)
     # Don't forget to redirect after saving to the database.
     return redirect('/')
 
