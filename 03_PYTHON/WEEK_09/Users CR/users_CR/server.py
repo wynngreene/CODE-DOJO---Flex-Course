@@ -1,28 +1,26 @@
 from flask import Flask, render_template, request, redirect
-# import the class from friend.py
-from user import User
+from users import User
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
-    # call the get all classmethod to get all friends
-    friends = User.get_all()
-    print(friends)
-    return render_template("index.html", all_friends=friends)
+    return redirect('/users')
 
-@app.route('/create_friend', methods=["POST"])
-def create_friend():
-    # First we make a data dictionary from our request.form coming from our template.
-    # The keys in data need to line up exactly with the variables in our query string.
-    data = {
-        "fname": request.form["fname"],
-        "lname" : request.form["lname"],
-        "occ" : request.form["occ"]
-    }
-    # We pass the data dictionary into the save method from the Friend class.
-    User.save(data)
-    # Don't forget to redirect after saving to the database.
-    return redirect('/')
+@app.route("/users")
+def users():
+    return render_template("users.html", all_users=User.get_all())
+
+@app.route('/user/new')
+def new():
+    return render_template("new_user.html")
+
+@app.route('/user/create', methods=["POST"])
+def create():
+    print(request.form)
+    User.save(request.form)
+    return redirect('/users')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
