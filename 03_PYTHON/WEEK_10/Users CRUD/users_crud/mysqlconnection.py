@@ -11,6 +11,7 @@ class MySQLConnection:
                                     autocommit = False)
         self.connection = connection
 
+
     def query_db(self, query:str, data:dict=None):
         with self.connection.cursor() as cursor:
             try:
@@ -30,6 +31,8 @@ class MySQLConnection:
                 print("Something went wrong", e)
                 return False
             finally:
-                self.connection.close() 
+                self.connection.close()
+
+
 def connectToMySQL(db):
     return MySQLConnection(db)
