@@ -1,6 +1,7 @@
 from mysqlconnection import connectToMySQL
 
 class User:
+    
     def __init__( self , data ):
         self.id = data['id']
         self.first_name = data['first_name']
@@ -18,12 +19,14 @@ class User:
             users.append( cls(u) )
         return users
     
-    #CRUD METHODS
-    #CREATE
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO users (first_name,last_name,email) VALUES (%(first_name)s,%(last_name)s,%(email)s);"
-        
+        query = "INSERT INTO users (first_name,last_name,email,created_at) VALUES (%(first_name)s,%(last_name)s,%(email)s, NOW());"
         result = connectToMySQL('users_schema').query_db(query,data)
         return result
-    
+
+    @classmethod
+    def get_one(cls, data ):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL('users_schema').query_db(query)
+        return cls(results[0])

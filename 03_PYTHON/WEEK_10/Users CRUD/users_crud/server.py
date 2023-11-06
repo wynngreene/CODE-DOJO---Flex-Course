@@ -9,7 +9,7 @@ def index():
 
 @app.route("/users")
 def users():
-    return render_template("users.html", all_users=User.get_all())
+    return render_template("users.html", all_users = User.get_all())
 
 @app.route('/user/new')
 def new():
@@ -20,6 +20,13 @@ def create():
     print(request.form)
     User.save(request.form)
     return redirect('/users')
+
+@app.route('/user/edit/<int:id>')
+def edit(id):
+    data = {
+        "id":id
+    }
+    return render_template("edit_user.html", one_user = User.get_one(data))
 
 
 if __name__ == "__main__":
