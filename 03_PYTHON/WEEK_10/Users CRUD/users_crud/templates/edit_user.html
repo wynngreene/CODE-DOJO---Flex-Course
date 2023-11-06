@@ -10,20 +10,20 @@
 
         <link rel="stylesheet" type="text/css" href="static/style.css">
 
-        <title>EditUser</title>
+        <title>Edit User</title>
     </head>
     <body>
         <nav class="nav">
-            <h1 class="title">All My Email</h1>
-            <a href="" class="">HOME</a>
+            <h1 class="title">Edit</h1>
+            <a href="/users" class="">HOME</a>
         </nav>
 
 
-        <form action="/user/create" method="post" class="col-6 mx-auto">
+        <form action="/user/update" method="post" class="col-6 mx-auto">
 
             <h1>Edit User: {{one_user.first_name}}</h1>
-
-            <!-- <div class="form-inline">
+            <input type="hidden" name="id"  value="{{one_user.id}}">
+            <div class="form-inline">
                 <label for="first_name" class="form-horizontal">First Name:</label>
                 <input type="text" name="first_name" class="form-control" value="{{one_user.first_name}}">
             </div>
@@ -38,6 +38,7 @@
             <div class="form-group">
                 <input type="submit" value="Update User" class="btn btn-success">
             </div>
-        </form> -->
+            <a href="/user/show/{{ one_user.id }}">View</a> 
+        </form>
     </body>
 </html>
