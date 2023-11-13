@@ -16,10 +16,3 @@ class Ninja:
         
         result = connectToMySQL("dojos_and_ninjas_schema").query_db(query, data)
         return result
-    
-    # @classmethod
-    # def get_all(cls):
-    #     query = "SELECT * FROM ninjas;"
-    #     results = connectToMySQL("dojos_and_ninjas_schema").query_db(query)
-    #     ninjas = []
-    
