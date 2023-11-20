@@ -33,4 +33,5 @@ def create_order():
 def update_order():
     print("In update POST route")
     print(request.form)
+    Cookie_order.edit(request.form)
     return redirect("/cookies")

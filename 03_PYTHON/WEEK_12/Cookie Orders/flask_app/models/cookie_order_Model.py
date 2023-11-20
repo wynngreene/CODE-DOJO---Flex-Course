@@ -19,3 +19,15 @@ class Cookie_order:
         result = connectToMySQL(cls.DB).query_db(query, data)
         return result
     
+    @classmethod
+    def edit(cls, data):
+        query = """
+                UPDATE cookie_orders
+                SET full_name = %(full_name)s,
+                cookie_type = %(cookie_type)s,
+                number_boxes = %(number_boxes)s,
+                updated_at = NOW(),
+                WHERE id = %(id)s;
+                """
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        return result
