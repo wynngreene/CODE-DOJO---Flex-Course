@@ -5,15 +5,11 @@ from flask_app.models.cookie_order_Model import Cookie_order
 
 # GET ROUTES
 @app.route("/")
-def index():
-    print("skip me")
-    return redirect("/cookies")
-
 @app.route("/cookies")
-def cookies():
+def index():
     # dojos = Dojo.get_all()
     print("In the index route")
-    return render_template("index.html")
+    return render_template("cookies.html")
 
 @app.route("/cookies/new")
 def new_page():
@@ -30,7 +26,7 @@ def edit_page(order_id):
 def create_order():
     print("In create POST route")
     print(request.form)
-    Cookie_order.save()
+    Cookie_order.save(request.form)
     return redirect("/cookies")
 
 @app.route("/cookies/update", methods=["POST"])

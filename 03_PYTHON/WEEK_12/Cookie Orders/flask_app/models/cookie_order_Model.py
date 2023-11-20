@@ -12,8 +12,10 @@ class Cookie_order:
         self.updated_at = data["updated_at"]
         
     @classmethod
-    def save(cls):
-        query = "INSERT INTO cookie_orders ( full_name, cookie_type, number_boxes, created_at, updated_at ) VALUES ( 'new name', 'new cookie', '8', NOW(),  NOW() );"
-        result = connectToMySQL(cls.DB).query_db(query)
+    def save(cls, data):
+        query = """
+                INSERT INTO cookie_orders ( full_name, cookie_type, number_boxes, created_at, updated_at )
+                VALUES ( %(full_name)s, %(cookie_type)s, %(number_boxes)s, NOW(),  NOW() );"""
+        result = connectToMySQL(cls.DB).query_db(query, data)
         return result
     
