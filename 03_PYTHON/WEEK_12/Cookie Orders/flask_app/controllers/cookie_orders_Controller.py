@@ -5,11 +5,13 @@ from flask_app.models.cookie_order_Model import Cookie_order
 
 # GET ROUTES
 @app.route("/")
+
 @app.route("/cookies")
 def index():
-    # dojos = Dojo.get_all()
     print("In the index route")
-    return render_template("cookies.html")
+    all_orders = Cookie_order.get_all()
+
+    return render_template("cookies.html", orders = all_orders)
 
 @app.route("/cookies/new")
 def new_page():
@@ -18,20 +20,27 @@ def new_page():
 
 @app.route("/cookies/edit/<order_id>")
 def edit_page(order_id):
+    cookie_order = Cookie_order.get_one(order_id)
     print("In the edit page route with id", order_id)
-    return render_template("edit_order.html")
+
+    return render_template("edit_order.html", cookie_order = cookie_order)
+
 
 # POST (ACTION) ROUTES
 @app.route("/cookies/create", methods=["POST"])
 def create_order():
     print("In create POST route")
     print(request.form)
-    Cookie_order.save(request.form)
-    return redirect("/cookies")
+    if Cookie_order.validate_order(request.form):
+        Cookie_order.save(request.form)
+        return redirect("/cookies")
+    return redirect("/cookies/new")
 
 @app.route("/cookies/update", methods=["POST"])
 def update_order():
     print("In update POST route")
     print(request.form)
-    Cookie_order.edit(request.form)
-    return redirect("/cookies")
+    if Cookie_order.validate_order(request.form):
+        Cookie_order.edit(request.form)
+        return redirect("/cookies")
+    return redirect(f"/cookies/edit/{request.form['id']}")
