@@ -25,28 +25,18 @@
                     <label>Name:</label>
                     <input type="text" name="name" class="form-control">
                 </div>
+                <br>
                 <input type="submit" value="Add Dojo" class="btn btn-primary btn-outline-dark">
             </form>
-            <table class="col-4 bg-light p-4 my-5">
-                <tr>
-                    <th class="">
-                    <h2 class="text-center">All Dojo Locations</h2>
-                    </th>
-                </tr>
-                
-                    {% for d in all_dojos %}
-                    <tr>
-                    <td>
-                        <a href="/dojo/{{d.id}}" class="text-warning">{{d.name}}</a>
-                    </td>
-                    </tr>
-                    {% endfor %}
-                                    <tr>
-                    <td>
-                        <a href="/ninjas" class="text-center">Add Ninjas</a>
-                    </td>
-                    </tr>
-            </table>
+            <div class=" container text-center">
+                <h2 class="text-center">All Dojo Locations</h2>
+                {% for d in all_dojos %}
+                <p>
+                    <a href="/dojo/{{d.id}}" class="text-warning">{{d.name}}</a>
+                </p>
+                {% endfor %}
+                <a href="/ninjas" class="text-center">Add Ninjas</a>
+            </div>
         </div>
     </main>
     <footer>
