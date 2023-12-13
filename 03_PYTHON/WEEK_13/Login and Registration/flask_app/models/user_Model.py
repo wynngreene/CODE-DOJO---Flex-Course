@@ -37,7 +37,7 @@ class User:
 
 #---GET_BY_EMAIL---DONE
     @classmethod
-    def get_by_email(cls, data):    
+    def get_by_email(cls, data):   
         query = "SELECT * FROM users WHERE email = %(email)s;"
         email_results = connectToMySQL(cls.DB).query_db(query, data)
         return cls(email_results[0])
@@ -72,20 +72,6 @@ class User:
             is_valid = False
         if user["password"] != user["confirm"]:
             flash("Password does not match.", "register")
-            is_valid = False
-        return is_valid
-
-#---VALIDATE_EMAIL---DONE
-    @staticmethod
-    def validate_register(user):
-        is_valid = True
-        query = "SELECT * FROM users WHERE email = %(email)s;"
-        valid_email_results = connectToMySQL(User.DB).query_db(query, user)
-        if len(valid_email_results) >= 1:
-            flash("Email already taken")
-            is_valid = False
-        if not EMAIL_REGEX.match(user["email"]):
-            flash("Invalid Email!!!")
             is_valid = False
         return is_valid
 
