@@ -38,10 +38,22 @@ class User:
         query = "SELECT * FROM users WHERE email = %(email)s;"
         valid_email_results = connectToMySQL(User.DB).query_db(query, user)
         if len(valid_email_results) >= 1:
-            flash("Email already taken")
+            flash("Email already taken.","register")
             is_valid = False
         if not EMAIL_REGEX.match(user["email"]):
-            flash("Invalid Email!!!")
+            flash("Invalid Email!!!", "register")
+            is_valid = False
+        if len(user["first_name"]) < 3:
+            flash("First name must be at least 3 characters.")
+            is_valid = False
+        if len(user["last_name"]) < 3:
+            flash("Last name must be at least 3 characters.")
+            is_valid = False
+        if len(user["password"]) < 8:
+            flash("Last name must be at least 8 characters.")
+            is_valid = False
+        if user["password"] != user["confirm"]:
+            flash("Password does not match.", "register")
             is_valid = False
         return is_valid
 
@@ -65,7 +77,7 @@ class User:
         is_valid = True
         query = "SELECT * FROM users WHERE email = %(email)s;"
         valid_login_results = connectToMySQL(User.DB).query_db(query, user)
-        
+
         return is_valid
 
 
