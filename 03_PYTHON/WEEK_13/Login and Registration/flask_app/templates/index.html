@@ -18,49 +18,64 @@
     <main>
     <div class="container justify-content-center row">
         <div class="col-sm-4 card text-white bg-dark" style="margin-right: 3em;">
-            <form action="" class="card-body">
+            <form action="/register" method="post" class="card-body">
                 <h2 class="card-header">Register</h2>
-                {% with messages = get_flashed_messages(category_filter=["register"]) %}
+                {% with messages = get_flashed_messages(category_filter=["register"]) %}    
                     {% if messages %}
                     <div class="alert alert-danger" role="alert">
                     <strong>Flash AHH!</strong>
-                        {% for message in messages %}
-                        <p>{(message)}</p>
+                        {% for message in messages %}  
+                        <p>{{message}}</p>
                         {% endfor %}
                     </div>
                     {% endif %}
                 {% endwith %}
-                <div class="form-label">
+                <div class="form-group">
                     <label for="first_name">First Name</label>
                     <input type="text" name="first_name" class="form-control" >
                 </div>
-                <div class="form-label">
+                <div class="form-group">
                     <label for="last_name">Last Name</label>
                     <input type="text" name="last_name" class="form-control" >
                 </div>
-                <div class="form-label">
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" class="form-control" >
                 </div>
-                <div class="form-label">
+                <div class="form-group">
                     <label for="password">Password</label>
                     <input type="text" name="password" class="form-control" >
                 </div>
-                <div class="form-label">
+                <div class="form-group">
                     <label for="confirm">Confirm Password</label>
                     <input type="text" name="confirm" class="form-control" >
                 </div>
                 <input type="submit" class="btn btn-primary btn-lg" value="Register">
             </form>
         </div>
+        
         <div class="col-sm-4 card text-white bg-dark ml-3">
-            <form action="login" class="card-body">
+            <form action="/login" method="post" class="card-body">
                 <h2 class="card-header">Login</h2>
-                <label for="email" class="form-label">Email:</label><br>
-                <input type="text"id="email" name="email" class="form-control" placeholder="My email.com"><br>
-                <label for="email" class="form-label">Password:</label><br>
-                <input type="text"id="password" name="password" class="form-control" placeholder="Password"><br>
-                <input type="submit" class="btn btn-primary btn-lg" value="Submit">
+                {% with messages = get_flashed_messages(category_filter=["login"]) %}
+                    {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                    <strong>Flash AHH!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endwith %}
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+                <input type="submit" class="btn btn-primary btn-lg" value="Login">
             </form>
         </div>
     </div>
