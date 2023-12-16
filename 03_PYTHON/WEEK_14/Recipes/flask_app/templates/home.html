@@ -19,12 +19,12 @@
 
     <main class="container">
         <br>
-        <h2 class="">Welcome, User</h2>
+        <h2 class="">Welcome {{user.first_name}} {{user.last_name}}</h2>
         <br>
         <div class="card bg-dark">
             <div class="card-header text-white d-flex justify-content-between">
                 <h4>All Posted Recipes</h4>
-                <input type="submit" class="btn btn-warning" value="(+) Create">
+                <a href="/recipes/new" class="btn btn-warning">(+) Create New</a> 
             </div>
             <table class="table card-body table-striped table-hover">
                 <tr>
@@ -39,7 +39,7 @@
                     <td>Anni</td>
                     <td>
                         <a href="/recipes/2">View Recipe</a> | 
-                        <a href="/recipes/edit">Edit</a> | 
+                        <a href="/recipes/edit/2">Edit</a> | 
                         <a href="">Delete</a>
                     </td>
                 </tr>
