@@ -29,7 +29,7 @@ def recipe_details(recipes_id):
     return render_template("recipe_detail.html")
 
 # 03 ROUTES | Render Page with Create Form
-@app.route("/recipes/new")
+@app.route("/recipes")
 def create_page(recipes_id):
     print("In create route.")
     return render_template("create_recipe.html")
