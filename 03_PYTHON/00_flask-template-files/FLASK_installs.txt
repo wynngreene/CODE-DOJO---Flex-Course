@@ -1,0 +1,8 @@
+01. new_project_folder $ pipenv install flask
+02. new_project_folder $ pipenv install PyMySQL flask
+03. new_project_folder $ pipenv install flask-bcrypt
+
+04. new_project_folder $ pipenv shell
+04. new_project_folder $ pipenv list 
+
+05. new_project_folder $ python3 server.py
