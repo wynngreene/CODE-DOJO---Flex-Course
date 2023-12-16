@@ -17,37 +17,38 @@
             </nav>
         </header>
 
-    <main class="container">
-        <br>
-        <h2 class="">Welcome, User</h2>
-        <br>
-        <div class="card bg-dark">
-            <div class="card-header text-white d-flex justify-content-between">
-                <h4>All Posted Recipes</h4>
-                <input type="submit" class="btn btn-warning" value="(+) Create">
+        <main class="container">
+            <br>
+            <h2>Welcome, User</h2>
+            <br>
+            <div class="card bg-dark ">
+                <div class="d-flex justify-content-between card-header text-white">
+                    <h4>SPAM MUSUBI</h4>
+                    <h4>Posted by: KAI</h4>
+                </div>
+                <table class="table card-body">
+                    <tr>
+                        <th>Desciption:</th>
+                        <td>A Delicious Hawaiian Dish</td>
+                    </tr>
+                    <tr>
+                        <th>Under 30 Minutes?:</th>
+                        <td>YES</td>
+                    </tr>
+                    <tr>
+                        <th>Instructions:</th>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</td>
+                    </tr>
+                    <tr>
+                        <th>Date Stamp:</th>
+                        <td>JAN 01, 1990</td>
+                    </tr>
+                </table>
+                <!--<div class="card-footer text-white">
+                </div> -->
             </div>
-            <table class="table card-body table-striped table-hover">
-                <tr>
-                    <th>USER NAME</th>
-                    <th>UNDER 30 MIN</th>
-                    <th>POSTED BY</th>
-                    <th>ACTIONS</th>
-                </tr>
-                <tr>
-                    <td>Yakitori <span class="badge badge-primary text-primary">New</span></td>
-                    <td>YES</td>
-                    <td>Anni</td>
-                    <td>
-                        <a href="">View Recipe</a> | 
-                        <a href="">Edit</a> | 
-                        <a href="">Delete</a>
-                    </td>
-                </tr>
-            </table>
-        <!-- <div class="card-footer text-white">
-        </div> -->
-        </div>
-    </main>
+        
+        </main>
 
         <footer>
             {% block footer %} {% include 'footer.html' %} {% endblock footer %}

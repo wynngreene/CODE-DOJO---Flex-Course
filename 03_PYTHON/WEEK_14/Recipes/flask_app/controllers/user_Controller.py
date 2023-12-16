@@ -20,14 +20,14 @@ def new_recipe():
     return render_template("create_recipe.html")
 
 # 03 ROUTES
-@app.route("/recipes/{id}")
+@app.route("/recipes/2")
 def detail_recipe():
-    return redirect("/recipes")
+    return render_template("recipe_detail.html")
 
 # 04 ROUTES
 @app.route("/recipes/edit")
 def edit_recipe():
-    return redirect("/recipes")
+    return render_template("edit_recipe.html")
 
 # 05 ROUTES
 @app.route("/recipes/edit")
