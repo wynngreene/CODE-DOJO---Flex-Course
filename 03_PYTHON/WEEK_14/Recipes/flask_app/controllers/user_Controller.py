@@ -17,7 +17,7 @@ def dashboard():
 # 02 ROUTES
 @app.route("/recipes/new")
 def new_recipe():
-    return redirect("/recipes")
+    return render_template("create_recipe.html")
 
 # 03 ROUTES
 @app.route("/recipes/{id}")

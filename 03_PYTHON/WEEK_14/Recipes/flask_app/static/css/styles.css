@@ -2,3 +2,15 @@
 .my-bg-color {
     background-color: orange;
 }
+
+.my-border-color {
+    background-color: #332D2D;
+}
+
+.my-card-color {
+    background-color: #332D2D;
+}
+
+main {
+    margin-bottom: 5em;
+}

@@ -1,7 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-import re
-EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 
 
 class Recipe:
@@ -13,9 +11,9 @@ class Recipe:
         self.name = data["name"]
         self.description = data["description"]
         self.instructions = data["instructions"]
-        self.password = data["password"]
-        self.created_at = data["created_at"]
-        self.updated_at = data["updated_at"]
+        self.date_made = data["date_made"]
+        self.under_30 = data["under_30"]
+        self.user_id = data["user_id"]
 
 #---Crud|CREATE (SAVE)---
     @classmethod
@@ -48,40 +46,3 @@ class Recipe:
     @classmethod
     def delete(cls):
         pass
-    
-
-#---VALIDATE_EMAIL---DONE
-    @staticmethod
-    def validate_register(user):
-        pass
-        # is_valid = True
-        # query = "SELECT * FROM users WHERE email = %(email)s;"
-        # valid_email_results = connectToMySQL(User.DB).query_db(query, user)
-        # if len(valid_email_results) >= 1:
-        #     flash("Email already taken.","register")
-        #     is_valid = False
-        # if not EMAIL_REGEX.match(user["email"]):
-        #     flash("Invalid Email!!!", "register")
-        #     is_valid = False
-        # if len(user["first_name"]) < 3:
-        #     flash("First name must be at least 3 characters.")
-        #     is_valid = False
-        # if len(user["last_name"]) < 3:
-        #     flash("Last name must be at least 3 characters.")
-        #     is_valid = False
-        # if len(user["password"]) < 8:
-        #     flash("Last name must be at least 8 characters.")
-        #     is_valid = False
-        # if user["password"] != user["confirm"]:
-        #     flash("Password does not match.", "register")
-        #     is_valid = False
-        # return is_valid
-
-#---VALIDATE_LOGIN---DONE
-    @staticmethod
-    def validate_login(user):
-        pass
-        # is_valid = True
-        # query = "SELECT * FROM users WHERE email = %(email)s;"
-        # valid_login_results = connectToMySQL(User.DB).query_db(query, user)
-        # return is_valid
