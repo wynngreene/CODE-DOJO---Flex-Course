@@ -19,23 +19,23 @@ class Recipe:
     @classmethod
     def save(cls, data):
         pass
-        # query = """
-        #         INSERT INTO users ( first_name, last_name, email, password, created_at, updated_at )
-        #         VALUES ( %(first_name)s, %(last_name)s, %(email)s, %(password)s, NOW(),  NOW() );
-        #         """
-        # save_result = connectToMySQL(cls.DB).query_db(query, data)
-        # return save_result
+        query = """
+                INSERT INTO recipes ( name, description, instructions, date_made, under_30, user_id )
+                VALUES ( %(name)s, %(description)s, %(instructions)s, %(date_made)s, %(under_30)s,  %(user_id)s );
+                """
+        save_result = connectToMySQL(cls.DB).query_db(query, data)
+        return save_result
 
 #---cRud|READ (GET_ALL_USER)---
     @classmethod
     def get_all(cls):
         pass
-        # query = "SELECT * FROM users"
-        # get_all_results = connectToMySQL(cls.DB).query_db(query)
-        # users = []
-        # for row in get_all_results:
-        #     users.append( cls[row])
-        # return users
+        query = "SELECT * FROM recipes"
+        get_all_results = connectToMySQL(cls.DB).query_db(query)
+        users = []
+        for row in get_all_results:
+            users.append( cls[row])
+        return users
     
 #---crUd|UPDATE (GET_ALL_USER)---
     @classmethod

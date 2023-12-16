@@ -14,3 +14,7 @@
 main {
     margin-bottom: 5em;
 }
+
+table {
+    margin-bottom: 0 !important;
+}

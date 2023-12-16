@@ -28,6 +28,17 @@ class User:
         # save_result = connectToMySQL(cls.DB).query_db(query, data)
         # return save_result
 
+#---cRud|READ (GET_ONE_USER)---
+    @classmethod
+    def get_by_id(cls):
+        query = "SELECT * FROM users"
+        get_all_results = connectToMySQL(cls.DB).query_db(query)
+        users = []
+        for row in get_all_results:
+            users.append( cls[row])
+        return users
+        
+
 #---cRud|READ (GET_ALL_USER)---
     @classmethod
     def get_all(cls):
