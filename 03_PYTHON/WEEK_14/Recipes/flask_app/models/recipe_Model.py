@@ -4,15 +4,15 @@ import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 
 
-class User:
+class Recipe:
 #---START---DONE
     DB = "recipe_schema"
 
     def __init__(self, data):
         self.id = data["id"]
-        self.first_name = data["first_name"]
-        self.last_name = data["last_name"]
-        self.email = data["email"]
+        self.name = data["name"]
+        self.description = data["description"]
+        self.instructions = data["instructions"]
         self.password = data["password"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
@@ -32,6 +32,12 @@ class User:
     @classmethod
     def get_all(cls):
         pass
+        # query = "SELECT * FROM users"
+        # get_all_results = connectToMySQL(cls.DB).query_db(query)
+        # users = []
+        # for row in get_all_results:
+        #     users.append( cls[row])
+        # return users
     
 #---crUd|UPDATE (GET_ALL_USER)---
     @classmethod
