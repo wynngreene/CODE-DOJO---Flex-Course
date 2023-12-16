@@ -7,12 +7,12 @@ bcrypt = Bcrypt(app)
 
 ######## GET ROUTES ########
 
-# 01 ROUTE | 
+# 01 ROUTE | LOGIN Page
 @app.route("/")
 def index():
     return render_template("index.html")
 
-
+# 02 ROUTE | 
 @app.route("/dashboard")
 def dashboard():
     if "user_id" not in session:
@@ -23,6 +23,7 @@ def dashboard():
     print(data)
     return render_template("dashboard.html", user=User.get_by_id(data))
 
+# 03 ROUTE | LOGOUT of Page
 @app.route("/logout")
 def logout():
     session.clear()
@@ -30,7 +31,7 @@ def logout():
 
 ######## POST ROUTES ########
 
-
+# 04 ROUTE | REGISTER User with POST
 @app.route("/register", methods=["POST"])
 def register():
     
@@ -47,11 +48,10 @@ def register():
 
     return redirect("/dashboard")
 
-
+# 05 ROUTE | LOGOUT as USER with POST
 @app.route("/login", methods=["POST"])
 def login():
     user = User.get_by_email(request.form)
-
     if not user:
         flash("Invalid Email", "login")
         return redirect("/")
