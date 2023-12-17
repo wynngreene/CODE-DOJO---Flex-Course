@@ -30,53 +30,37 @@
                 </div> -->
                 <div class="d-flex card-body bg-light">
                     <div class="flex-fill">
-                        
                         <table class="table container">
                             <form action="/recipes" method="post"></form>
+
                                 <tr class="form-group">
                                     <th><label for="name">Name:</label></th>
                                     <td><input class="form-control" type="text" id="name"></td>
+                                    <th colspan="2"><label for="name">Date Cooked / Made</label></th>
                                 </tr>
+
                                 <tr class="form-group">
                                     <th><label for="Description">Description:</label></th>
                                     <td><textarea class="form-control" rows="3" type="text" id="description"></textarea></td>
+                                    <th><label for="name">Date:</label></th>
+                                    <td><input class="form-control" type="date" id="date_made"></td>
                                 </tr>
+
                                 <tr class="form-group">
                                     <th><label for="Instructions">Instructions:</label></th>
                                     <td><textarea class="form-control" rows="3" type="text" id="instructions"></textarea></td>
+                                    <td colspan="2">
+                                        <label for="name">Under 30 Minutes?</label>
+                                        <div class="d-flex">
+                                            <label for="yes" class="form-control">Yes</label>
+                                            <input type="radio" id="under_30" value="1">
+                                            <label for="no" class="form-control">No</label>
+                                            <input type="radio" id="under_30" value="0">
+                                        </div>
+                                    </td>
                                 </tr>
                             </form>
-                        </table>
-                            <!-- <div class="table container">
-                                <div class="form-group">
-                                    <label for="name">Name:</label>
-                                    <input class="form-control" type="text" name="name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Description">Description:</label>
-                                    <textarea class="form-control" rows="3" type="text" name="description"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Instructions">Instructions:</label>
-                                    <textarea class="form-control" rows="3" type="text" name="instructions"></textarea>
-                                </div>
-                            </div> -->
-                    </div>
-                    <div class="flex-fill p-3" style="text-align:center;">
-                        <div>
-                            <h5>Date Cooked / Made</h5>
-                            <label for="date_made">Date:</label>
-                            <input type="date" class="form-control" name="date_made">
-                        </div>
-                        <br>
-                        <div>
-                            <h5>Under 30 Minutes?</h5>
-                            <label for="yes" class="form-control">Yes</label>
-                            <input type="radio" name="under_30" value="1">
-                            <label for="no" class="form-control">No</label>
-                            <input type="radio" name="under_30" value="0">
-                            
-                        </div>
+                        </table>   
                     </div>
                 </div>
                 <div class="p-3">
