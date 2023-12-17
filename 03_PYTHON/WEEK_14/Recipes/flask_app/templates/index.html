@@ -28,7 +28,7 @@
                         {% with messages = get_flashed_messages(category_filter=["register"]) %}    
                             {% if messages %}
                             <div class="alert alert-danger">
-                                <strong>NEWS Flash!</strong> 
+                                <strong>Danger!</strong> 
                             {% for message in messages %}  
                             <p>{{message}}</p>
                             {% endfor %}
@@ -65,7 +65,7 @@
                 </div>
                 
                 <div class="col-sm-4 card text-white bg-dark">
-                    <form action="/login" method="POST" class="card-body">
+                    <form action="/login" method="post" class="card-body">
                         <h4 class="card-header">Login</h4>
                         {% with messages = get_flashed_messages(category_filter=["login"]) %}
                             {% if messages %}

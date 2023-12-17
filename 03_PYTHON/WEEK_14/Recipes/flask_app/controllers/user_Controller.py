@@ -4,34 +4,12 @@ from flask_app.models.user_Model import User
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app) 
 
-
-######## GET ROUTES ########
-
-# 01 ROUTE | REG & LOGIN Page
+# GET ROUTES
 @app.route("/")
 def index():
     return render_template("index.html")
 
-# 02 ROUTE | DASHBOARD into HOME Page
-@app.route("/home")
-def dashboard():
-    if "user_id" not in session:
-        return redirect("/logout")
-    data = {
-        "id" : session["user_id"]
-    }
-    print(data)
-    return render_template("home.html", user=User.get_by_id(data))
 
-# 03 ROUTE | LOGOUT of Page
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect("/")
-
-######## POST ROUTES ########
-
-# 04 ROUTE | REGISTER User with POST
 @app.route("/register", methods=["POST"])
 def register():
     
@@ -45,14 +23,14 @@ def register():
     }
     id = User.save(data)
     session["user_id"] = id
-    print(session)
-# DASHBOARD into HOME Page
-    return redirect("/home")
 
-# 05 ROUTE | LOGOUT as USER with POST
+    return redirect("/dashboard")
+
+
 @app.route("/login", methods=["POST"])
 def login():
     user = User.get_by_email(request.form)
+
     if not user:
         flash("Invalid Email", "login")
         return redirect("/")
@@ -60,4 +38,18 @@ def login():
         flash("Invalid Password", "login")
         return redirect("/")
     session["user_id"] = user.id
-    return redirect("/home")
+    return redirect("/dashboard")
+
+@app.route("/dashboard")
+def dashboard():
+    if "user_id" not in session:
+        return redirect("/logout")
+    data = {
+        "id" : session["user_id"]
+    }
+    return render_template("home.html", user=User.get_by_id(data))
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")

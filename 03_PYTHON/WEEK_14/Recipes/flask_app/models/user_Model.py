@@ -5,7 +5,7 @@ from flask import flash
 
 class User:
 #---START---DONE
-    DB = "login_reg"
+    DB = "recipe_schema"
     def __init__(self, data):
         self.id = data["id"]
         self.first_name = data["first_name"]
@@ -19,10 +19,11 @@ class User:
     @classmethod
     def save(cls, data):
         query = """
-                INSERT INTO users ( first_name, last_name, email, password, created_at, updated_at )
-                VALUES ( %(first_name)s, %(last_name)s, %(email)s, %(password)s, NOW(),  NOW() );
+                INSERT INTO users ( first_name, last_name, email, password, created_at, updated_at)
+                VALUES ( %(first_name)s, %(last_name)s, %(email)s, %(password)s, NOW(), NOW() );
                 """
         save_result = connectToMySQL(cls.DB).query_db(query, data)
+        print(data)
         return save_result
 
 #---GET_ALL_USER---
@@ -47,6 +48,7 @@ class User:
     def get_by_id(cls, data):    
         query = "SELECT * FROM users WHERE id = %(id)s;"
         id_results = connectToMySQL(cls.DB).query_db(query, data)
+        print(data)
         return cls(id_results[0])
 
 #---VALIDATE_EMAIL---DONE
@@ -56,19 +58,19 @@ class User:
         query = "SELECT * FROM users WHERE email = %(email)s;"
         valid_email_results = connectToMySQL(User.DB).query_db(query, user)
         if len(valid_email_results) >= 1:
-            flash("Email already taken.","register")
+            flash("Email already taken.", "register")
             is_valid = False
         if not EMAIL_REGEX.match(user["email"]):
-            flash("Invalid Email!!!", "register")
+            flash("Invalid Email!", "register")
             is_valid = False
         if len(user["first_name"]) < 3:
-            flash("First name must be at least 3 characters.")
+            flash("First name must be at least 3 characters.","register")
             is_valid = False
         if len(user["last_name"]) < 3:
-            flash("Last name must be at least 3 characters.")
+            flash("Last name must be at least 3 characters.","register")
             is_valid = False
-        if len(user["password"]) < 8:
-            flash("Last name must be at least 8 characters.")
+        if len(user["password"]) < 5:
+            flash("password must be at least 5 characters.","register")
             is_valid = False
         if user["password"] != user["confirm"]:
             flash("Password does not match.", "register")

@@ -8,17 +8,19 @@ from flask_app.models.user_Model import User
 ######## GET ROUTES ########
 
 # 01 ROUTES | 
-@app.route("/recipes/home")
+@app.route("/home")
 def recipes_home():
     if "user_id" not in session:
         print("Yo, you need to be logged in to see the dashboard")
         return redirect("/")
 
     user = User.get_by_id(session["user_id"])
+
     # TO DO
     # Get all the Recipes and send to the template.
 
     return render_template("home.html", user=user)
+
 
 # 02 ROUTES | Render Pages Details PAge for One Recipe
 @app.route("/recipes/<recipes_id>")
@@ -52,13 +54,13 @@ def delete_recipe(recipes_id):
 ######## POST ROUTES ########
 
 # 06 ROUTES | CREATE (Process form)
-@app.route("/recipes", method=["POST"])
+@app.route("/recipes")
 def create_recipe():
     print("In the create process POST route:", request.form)
     return redirect("/recipes")
 
 # 07 ROUTES | UPDATE (Process form)
-@app.route("/recipes/update", method=["POST"])
+@app.route("/recipes/update")
 def update_recipe():
     print("In update POST route:", request.form)
     return redirect("/recipes")
