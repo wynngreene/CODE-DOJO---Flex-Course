@@ -81,6 +81,10 @@ class User:
         is_valid = True
         query = "SELECT * FROM users WHERE email = %(email)s;"
         valid_login_results = connectToMySQL(User.DB).query_db(query, user)
+        if len(user["email"]) == 0:
+            flash("Please enter your email.")
+            is_valid = False
+        
         return is_valid
 
     

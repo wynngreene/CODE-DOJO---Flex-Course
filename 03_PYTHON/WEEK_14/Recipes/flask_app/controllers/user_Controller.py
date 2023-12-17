@@ -12,8 +12,8 @@ bcrypt = Bcrypt(app)
 def index():
     return render_template("index.html")
 
-# 02 ROUTE | 
-@app.route("/dashboard")
+# 02 ROUTE | DASHBOARD into HOME Page
+@app.route("/home")
 def dashboard():
     if "user_id" not in session:
         return redirect("/logout")
@@ -21,7 +21,7 @@ def dashboard():
         "id" : session["user_id"]
     }
     print(data)
-    return render_template("dashboard.html", user=User.get_by_id(data))
+    return render_template("home.html", user=User.get_by_id(data))
 
 # 03 ROUTE | LOGOUT of Page
 @app.route("/logout")
