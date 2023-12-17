@@ -59,7 +59,6 @@ def delete_recipe(recipes_id):
 @app.route("/recipes", methods=["POST"])
 def create_recipe():
     print("In the create process POST route:", request.form)
-    
     Recipe.save(request.form)
     return redirect("/recipes/home")
 
