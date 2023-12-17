@@ -7,7 +7,7 @@ bcrypt = Bcrypt(app)
 
 ######## GET ROUTES ########
 
-# 01 ROUTE | LOGIN Page
+# 01 ROUTE | REG & LOGIN Page
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -45,8 +45,9 @@ def register():
     }
     id = User.save(data)
     session["user_id"] = id
-
-    return redirect("/dashboard")
+    print(session)
+# DASHBOARD into HOME Page
+    return redirect("/home")
 
 # 05 ROUTE | LOGOUT as USER with POST
 @app.route("/login", methods=["POST"])
@@ -59,4 +60,4 @@ def login():
         flash("Invalid Password", "login")
         return redirect("/")
     session["user_id"] = user.id
-    return redirect("/dashboard")
+    return redirect("/home")

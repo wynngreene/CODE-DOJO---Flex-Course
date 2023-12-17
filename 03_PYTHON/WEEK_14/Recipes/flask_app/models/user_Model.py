@@ -5,7 +5,7 @@ from flask import flash
 
 class User:
 #---START---DONE
-    DB = "recipe_schema"
+    DB = "login_reg"
     def __init__(self, data):
         self.id = data["id"]
         self.first_name = data["first_name"]
@@ -81,10 +81,6 @@ class User:
         is_valid = True
         query = "SELECT * FROM users WHERE email = %(email)s;"
         valid_login_results = connectToMySQL(User.DB).query_db(query, user)
-        if len(user["email"]) == 0:
-            flash("Please enter your email.")
-            is_valid = False
-        
         return is_valid
 
     
