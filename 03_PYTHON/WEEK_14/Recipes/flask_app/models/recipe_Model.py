@@ -6,24 +6,25 @@ class Recipe:
 #---START---DONE
     DB = "recipe_schema"
 
-    def __init__(self, data):
-        self.id = data["id"]
-        self.name = data["name"]
-        self.description = data["description"]
-        self.instructions = data["instructions"]
-        self.date_made = data["date_made"]
-        self.under_30 = data["under_30"]
-        self.user_id = data["user_id"]
+    def __init__(self, recipe):
+        self.id = recipe["id"]
+        self.name = recipe["name"]
+        self.description = recipe["description"]
+        self.instructions = recipe["instructions"]
+        self.date_made = recipe["date_made"]
+        self.under_30 = recipe["under_30"]
+        self.created_at = recipe["created_at"]
+        self.updated_at = recipe["updated_at"]
+        self.user = None
 
 #---Crud|CREATE (SAVE)---
     @classmethod
-    def save(cls, data):
-        pass
+    def save(cls, recipes_data):
         query = """
-                INSERT INTO recipes ( name, description, instructions, date_made, under_30, user_id )
+                INSERT INTO recipes ( name, description, instructions, date_made, under_30, user_id)
                 VALUES ( %(name)s, %(description)s, %(instructions)s, %(date_made)s, %(under_30)s,  %(user_id)s );
                 """
-        save_result = connectToMySQL(cls.DB).query_db(query, data)
+        save_result = connectToMySQL(cls.DB).query_db(query, recipes_data)
         return save_result
 
 #---cRud|READ (GET_ALL_USER)---
