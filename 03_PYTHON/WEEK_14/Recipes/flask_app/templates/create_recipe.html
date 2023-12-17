@@ -30,21 +30,23 @@
                 </div> -->
                 <div class="d-flex card-body bg-light">
                     <div class="flex-fill">
-                        <form action="/recipes" method="post">
-                            <table class="table container">
+                        
+                        <table class="table container">
+                            <form action="/recipes" method="post"></form>
                                 <tr class="form-group">
                                     <th><label for="name">Name:</label></th>
-                                    <td><input class="form-control" type="text" name="name"></td>
+                                    <td><input class="form-control" type="text" id="name"></td>
                                 </tr>
                                 <tr class="form-group">
                                     <th><label for="Description">Description:</label></th>
-                                    <td><textarea class="form-control" rows="3" type="text" name="description"></textarea></td>
+                                    <td><textarea class="form-control" rows="3" type="text" id="description"></textarea></td>
                                 </tr>
                                 <tr class="form-group">
                                     <th><label for="Instructions">Instructions:</label></th>
-                                    <td><textarea class="form-control" rows="3" type="text" name="instructions"></textarea></td>
+                                    <td><textarea class="form-control" rows="3" type="text" id="instructions"></textarea></td>
                                 </tr>
-                            </table>
+                            </form>
+                        </table>
                             <!-- <div class="table container">
                                 <div class="form-group">
                                     <label for="name">Name:</label>
@@ -59,8 +61,6 @@
                                     <textarea class="form-control" rows="3" type="text" name="instructions"></textarea>
                                 </div>
                             </div> -->
-
-                        </form>
                     </div>
                     <div class="flex-fill p-3" style="text-align:center;">
                         <div>
