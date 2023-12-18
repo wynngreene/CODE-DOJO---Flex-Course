@@ -33,7 +33,13 @@
                     </tr>
                     <tr>
                         <th>Under 30 Minutes:</th>
-                        <td>{{recipe.under_30}}</td>
+                        <td>
+                            {% if recipe.under_30: %}
+                                Yes
+                            {% else %}
+                                No
+                            {% endif %}
+                        </td>
                     </tr>
                     <tr>
                         <th>Instructions:</th>
@@ -49,7 +55,7 @@
                     </tr>
                 </table>
                 <div class="p-3">
-                    <a href="/recipes/edit" class="btn btn-warning">Edit Recipe</a>
+                    <a href="/recipes/edit/2" class="btn btn-warning">Edit Recipe</a>
                 </div>
             </div>
         

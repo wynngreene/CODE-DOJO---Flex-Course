@@ -4,14 +4,14 @@ from flask_app.models.user_Model import User
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app) 
 
-######## GET ROUTES ########
+######## BLEND ROUTES ########
 
 # 00 ROUTES | INDEX Login Page
 @app.route("/")
 def index():
     return render_template("index.html")
 
-# 00 ROUTES | DASHBOARD 
+# 01 ROUTES | DASHBOARD 
 @app.route("/dashboard")
 def dashboard():
     if "user_id" not in session:
@@ -19,12 +19,20 @@ def dashboard():
     data = {
         "id" : session["user_id"]
     }
+
+    print("I got my 03 LIST of", data)
+
     return render_template("home.html", user=User.get_by_id(data))
+
+######## GET ROUTES ########
+
 
 # 00 ROUTES | LOGOUT
 @app.route("/logout")
 def logout():
     session.clear()
+
+    print("Session CLEARED!")
     return redirect("/")
 
 
@@ -44,7 +52,7 @@ def register():
     }
     id = User.save(data)
     session["user_id"] = id
-    return redirect("/dashboard")
+    return redirect("/dashboard_02")
 
 
 # 00 ROUTES | LOGIN (Process form)
@@ -58,5 +66,7 @@ def login():
     if not bcrypt.check_password_hash(user.password, request.form["password"]):
         flash("Invalid Password", "login")
         return redirect("/")
+    
     session["user_id"] = user.id
-    return redirect("/dashboard")
+
+    return redirect("/dashboard_02")

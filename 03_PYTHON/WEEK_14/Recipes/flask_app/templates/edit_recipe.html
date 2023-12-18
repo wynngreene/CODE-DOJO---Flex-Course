@@ -20,6 +20,7 @@
         <main class="container">
             <br>
             <h2>Edit Recipe</h2>
+            {{recipe.id}}
             <br>
             <div class="card bg-dark">
                 <div class="card-header text-white">
@@ -36,16 +37,17 @@
                                 <input type="hidden" name="id" value="2">
                                 <tr class="form-group">
                                     <th><label for="name">Name:</label></th>
-                                    <td><input class="form-control" type="text"name="fname"></td>
+                                    <td><input class="form-control" type="text" name="name" value="{{recipe.name}}"></td>
                                 </tr>
                                 <tr class="form-group">
                                     <th><label for="Description">Description:</label></th>
-                                    <td><textarea class="form-control" rows="3" name="description"></textarea></td>
+                                    <td><textarea class="form-control" rows="3" type="text" name="description" value="{{recipe.description}}"></textarea></td>
                                 </tr>
                                 <tr class="form-group">
                                     <th><label for="Instructions">Instructions:</label></th>
-                                    <td><textarea class="form-control" rows="3" name="instructions"></textarea></td>
+                                    <td><textarea class="form-control" rows="3" type="text" name="instructions" value="{{recipe.instructions}}"></textarea></td>
                                 </tr>
+
                             </table>
                         </form>
                     </div>

@@ -33,17 +33,19 @@
                     <th>POSTED BY</th>
                     <th>ACTIONS</th>
                 </tr>
+                {% for recipe in recipes %}
                 <tr>
-                    <td>Yakitori <span class="badge badge-primary text-primary">New</span></td>
-                    <td>YES</td>
-                    <td>Anni</td>
-                    
+                
+                    <td>{{recipe.name}} <span class="badge badge-primary text-primary">New</span></td>
+                    <td>{{recipe.under_30}}</td>
+                    <td>{{recipe.user.first_name}}</td>
                     <td>
-                        <a href="/recipes/4">View Recipe</a> | 
-                        <a href="/recipes/edit/2">Edit</a> | 
-                        <a href="/recipes/delete/2">Delete</a>
+                        <a href="/recipes/{{recipe.id}}">View Recipe</a> | 
+                        <a href="/recipes/edit/{{recipe.id}}">Edit</a> | 
+                        <a href="/recipes/delete/{{recipe.id}}">Delete</a>
                     </td>
                 </tr>
+                {% endfor %}
             </table>
         <!-- <div class="card-footer text-white">
         </div> -->

@@ -63,20 +63,39 @@ class Recipe:
 #---cRud|READ (GET_ALL_USER)---
     @classmethod
     def get_all(cls):
-        pass
-        query = "SELECT * FROM recipes"
-        get_all_results = connectToMySQL(cls.DB).query_db(query)
-        users = []
-        for row in get_all_results:
-            users.append( cls[row])
-        return users
+        query = """SELECT * FROM recipes
+        JOIN users on recipes.user_id = users.id;"""
+
+        results = connectToMySQL(cls.DB).query_db(query)
+
+        recipes = []
+
+        for recipe_dict in results:
+            recipe_obj = Recipe(recipe_dict)
+            user_obj = user_Model.User({
+                "id" : recipe_dict["users.id"],
+                "first_name" : recipe_dict["first_name"],
+                "last_name" : recipe_dict["last_name"],
+                "email" : recipe_dict["email"],
+                "password" : recipe_dict["password"],
+                "created_at" : recipe_dict["users.created_at"],
+                "updated_at" : recipe_dict["users.updated_at"]
+            })
+            # Associate user with Recipe
+            recipe_obj.user = user_obj
+            # Append to List
+            recipes.append(recipe_obj)
+        # Return the list of Recipes
+        return recipes
     
-#---crUd|UPDATE (GET_ALL_USER)---
+
+    
+#---crUd|UPDATE (UPDATE Recipes)---
     @classmethod
     def update(cls):
         pass
         
-#---cruD|DELETE (GET_ALL_USER)---
+#---cruD|DELETE (DELETE Recipes)---
     @classmethod
     def delete(cls):
         pass
