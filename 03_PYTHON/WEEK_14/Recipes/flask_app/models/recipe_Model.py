@@ -1,5 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app import app
 from flask import flash
+from flask_app.models import user_Model
 
 
 class Recipe:
@@ -17,12 +19,43 @@ class Recipe:
         self.updated_at = recipe["updated_at"]
         self.user = None
 
+#---cRud|READ (GET_ONE_RECIPE)---
+    @classmethod
+    def get_one_recipe_id(cls, recipe_id):
+        pass
+        query = """SELECT * FROM recipes
+        JOIN users on recipes.user_id = users.id
+        WHERE recipes.id = %(id)s"""
+
+        data = {
+            "id":recipe_id
+        }
+
+        get_one_results = connectToMySQL(cls.DB).query_db(query, data)
+        recipe_dict = get_one_results[0]
+
+        recipe_obj = Recipe(recipe_dict)
+
+        user_obj = user_Model.User({
+            "id" : recipe_dict["users.id"],
+            "first_name" : recipe_dict["first_name"],
+            "last_name" : recipe_dict["last_name"],
+            "email" : recipe_dict["email"],
+            "password" : recipe_dict["password"],
+            "created_at" : recipe_dict["users.created_at"],
+            "updated_at" : recipe_dict["users.updated_at"]
+        })
+
+        recipe_obj.user = user_obj
+
+        return recipe_obj
+
 #---Crud|CREATE (SAVE)---
     @classmethod
     def save(cls, recipes_data):
         query = """
-                INSERT INTO recipes ( name, description, instructions, date_made, under_30, user_id, created_at, updated_at )
-                VALUES ( %(name)s, %(description)s, %(instructions)s, %(date_made)s, %(under_30)s,  %(user_id)s, NOW(), NOW() );
+                INSERT INTO recipes ( name, description, instructions, date_made, under_30, created_at, updated_at, user_id)
+                VALUES ( %(name)s, %(description)s, %(instructions)s, %(date_made)s, %(under_30)s, NOW(), NOW(), %(user_id)s );
                 """
         save_result = connectToMySQL(cls.DB).query_db(query, recipes_data)
         return save_result
