@@ -99,7 +99,7 @@ class Recipe:
     @classmethod
     def delete_by_recipe_id(cls, recipe_id):
         query = """DELETE FROM recipes
-        WHERE id = id;"""
+        WHERE id = %(id)s;"""
         data = {
             "id": recipe_id
         }

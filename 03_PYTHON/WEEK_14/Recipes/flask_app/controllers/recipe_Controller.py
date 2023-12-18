@@ -63,6 +63,7 @@ def delete_recipe(recipe_id):
     print("In delete page: ", recipe_id)
     # Call delete method
     recipe = Recipe.delete_by_recipe_id(recipe_id)
+    
     return redirect("/dashboard_02")
 
 
