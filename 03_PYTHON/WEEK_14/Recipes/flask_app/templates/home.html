@@ -37,12 +37,22 @@
                 <tr>
                 
                     <td>{{recipe.name}} <span class="badge badge-primary text-primary">New</span></td>
-                    <td>{{recipe.under_30}}</td>
+                    <td>
+                        {% if recipe.under_30: %}
+                        Yes
+                        {% else %}
+                        No
+                        {% endif %}
+                    </td>
                     <td>{{recipe.user.first_name}}</td>
                     <td>
-                        <a href="/recipes/{{recipe.id}}">View Recipe</a> | 
+                        <a href="/recipes/{{recipe.id}}">View Recipe</a> |
+
+                        {% if user.id == recipe.user.id: %}
                         <a href="/recipes/edit/{{recipe.id}}">Edit</a> | 
                         <a href="/recipes/delete/{{recipe.id}}">Delete</a>
+                        {% endif %}
+                        
                     </td>
                 </tr>
                 {% endfor %}
