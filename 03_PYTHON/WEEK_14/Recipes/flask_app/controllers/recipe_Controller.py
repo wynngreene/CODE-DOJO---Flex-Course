@@ -29,7 +29,7 @@ def recipe_details(recipes_id):
     
     recipe = Recipe.get_one_recipe_id(recipes_id)
 
-    return render_template("recipe_detail.html")
+    return render_template("recipe_detail.html", recipe=recipe)
 
 # 03 ROUTES | Render Page with Create Form
 @app.route("/recipes/new")

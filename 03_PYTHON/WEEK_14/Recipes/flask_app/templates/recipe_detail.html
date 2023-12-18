@@ -19,30 +19,33 @@
 
         <main class="container">
             <br>
-            <h2>Welcome, User</h2>
+            <h2>Welcome, {{recipe.user.first_name}}</h2>
             <br>
             <div class="card bg-dark ">
                 <div class="d-flex justify-content-between card-header text-white">
-                    <h4>SPAM MUSUBI</h4>
-                    <h4>Posted by: KAI</h4>
+                    <h4>{{recipe.name}}</h4>
+                    <h4>Posted by: {{recipe.user.first_name}}</h4>
                 </div>
-                {{recipe}}
                 <table class="table card-body">
                     <tr>
-                        <th>Desciption:</th>
-                        <td>A Delicious Hawaiian Dish</td>
+                        <th>Description:</th>
+                        <td>{{recipe.description}}</td>
                     </tr>
                     <tr>
-                        <th>Under 30 Minutes?:</th>
-                        <td>YES</td>
+                        <th>Under 30 Minutes:</th>
+                        <td>{{recipe.under_30}}</td>
                     </tr>
                     <tr>
                         <th>Instructions:</th>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</td>
+                        <td>{{recipe.instructions}}</td>
                     </tr>
                     <tr>
-                        <th>Date Stamp:</th>
-                        <td>JAN 01, 1990</td>
+                        <th>Date Made:</th>
+                        <td>{{recipe.date_made}}</td>
+                    </tr>
+                    <tr>
+                        <th>Posted:</th>
+                        <td>{{recipe.user.first_name}} {{recipe.user.last_name}}</td>
                     </tr>
                 </table>
                 <div class="p-3">
