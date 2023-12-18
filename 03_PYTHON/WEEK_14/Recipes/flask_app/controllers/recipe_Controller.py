@@ -34,6 +34,7 @@ def create_page():
     print("In create route.")
     print(session["user_id"])
     print(session)
+
     return render_template("create_recipe.html")
 
 # 04 ROUTES | Render Page with Edit Form
@@ -59,6 +60,7 @@ def delete_recipe(recipes_id):
 @app.route("/recipes", methods=["POST"])
 def create_recipe():
     print("In the create process POST route:", request.form)
+    
     Recipe.save(request.form)
     return redirect("/recipes/home")
 

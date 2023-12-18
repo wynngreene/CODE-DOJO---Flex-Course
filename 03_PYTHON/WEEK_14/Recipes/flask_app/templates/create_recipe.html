@@ -30,43 +30,46 @@
                 </div> -->
                 <div class="d-flex card-body bg-light">
                     <div class="flex-fill">
-                        <table class="table container">
-                            <form action="/recipes" method="post"></form>
 
-                                <tr class="form-group">
-                                    <th><label for="name">Name:</label></th>
-                                    <td><input class="form-control" type="text" id="name"></td>
-                                    <th colspan="2"><label for="name">Date Cooked / Made</label></th>
-                                </tr>
-
-                                <tr class="form-group">
-                                    <th><label for="Description">Description:</label></th>
-                                    <td><textarea class="form-control" rows="3" type="text" id="description"></textarea></td>
-                                    <th><label for="name">Date:</label></th>
-                                    <td><input class="form-control" type="date" id="date_made"></td>
-                                </tr>
-
-                                <tr class="form-group">
-                                    <th><label for="Instructions">Instructions:</label></th>
-                                    <td><textarea class="form-control" rows="3" type="text" id="instructions"></textarea></td>
-                                    <td colspan="2">
-                                        <label for="name">Under 30 Minutes?</label>
-                                        <div class="d-flex">
-                                            <label for="yes" class="form-control">Yes</label>
-                                            <input type="radio" id="under_30" value="1">
-                                            <label for="no" class="form-control">No</label>
-                                            <input type="radio" id="under_30" value="0">
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td colspan="4">
-                                        <input type="submit" class="btn btn-warning" value="Submit">
-                                    </td>
-                                </tr>
-                            </form>
-                        </table>   
+                    <table class="table container">
+                        <form action="/recipes" method="post">
+                        <tr class="form-group">
+                            <th><label for="name">Name:</label></th>
+                            <td><input class="form-control" type="text" name="name"></td>
+                        </tr>
+                        <tr class="form-group">
+                            <th><label for="Description">Description:</label></th>
+                            <td><textarea class="form-control" rows="3" type="text"  name="description"></textarea></td>
+                        </tr>
+                        <tr class="form-group">
+                            <th><label for="Instructions">Instructions:</label></th>
+                            <td><textarea class="form-control" rows="3" type="text"  name="instructions"></textarea></td>
+                        </tr>
+                        <tr class="form-group">
+                            <th><label for="date_made">Date Cooked / Made:</label></th>
+                            <td>
+                                <input type="date" name="date_made">
+                            </td>
+                        </tr>
+                        <tr class="form-group">
+                            <th><label for="name">Under 30 Minutes?</label></th>
+                            <td colspan="2">
+                                <div class="d-flex">
+                                    <input type="radio" name="under_30" value="1">
+                                    <label for="html">Yes</label>
+                                    <input type="radio"  name="under_30" value="0">
+                                    <label for="css">No</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <!-- <input type="hidden" name="user_id"> -->
+                                <input type="submit" name="submit" class="btn btn-warning">
+                            </td>
+                        </tr>
+                        </form>
+                    </table>
                     </div>
                 </div>
                 <div class="p-3">
