@@ -97,5 +97,11 @@ class Recipe:
         
 #---cruD|DELETE (DELETE Recipes)---
     @classmethod
-    def delete(cls):
-        pass
+    def delete_by_recipe_id(cls, recipe_id):
+        query = """DELETE FROM recipes
+        WHERE id = id;"""
+        data = {
+            "id": recipe_id
+        }
+        results = connectToMySQL(cls.DB).query_db(query, data)
+        return

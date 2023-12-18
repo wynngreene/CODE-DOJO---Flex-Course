@@ -61,8 +61,8 @@ def edit_page(recipe_id):
 def delete_recipe(recipe_id):
     print("In delete page: ", recipe_id)
     # Call delete method
-    recipe = Recipe.get_one_recipe_id(recipe_id)
-    return redirect("/recipes/home")
+    recipe = Recipe.delete_by_recipe_id(recipe_id)
+    return redirect("/dashboard_02")
 
 
 ######## POST ROUTES ########
@@ -72,7 +72,7 @@ def delete_recipe(recipe_id):
 def create_recipe():
     print("In the create process POST route:", request.form)
     Recipe.save(request.form)
-    return redirect("/recipes/home")
+    return redirect("/dashboard_02")
 
 # 07 ROUTES | UPDATE (Process form)
 @app.route("/recipes/update", methods=["POST"])
