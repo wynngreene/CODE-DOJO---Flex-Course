@@ -94,8 +94,9 @@ class Recipe:
     @classmethod
     def update_recipe(cls, recipe_data):
         query = """UPDATE recipes
-        SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s
+        SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s, updated_at = NOW(), 
         WHERE id = %(id)s;"""
+
 
         update_results = connectToMySQL(cls.DB).query_db(query, recipe_data)
         return update_results

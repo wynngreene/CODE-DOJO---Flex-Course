@@ -20,6 +20,7 @@
         <main class="container">
             <br>
             <h2>Edit Recipe</h2>
+            <input type="hidden" name="recipe_id" value="{{ recipe.id }}">
             <br>
             <div class="card bg-dark">
                 <div class="card-header text-white">
@@ -66,7 +67,6 @@
                             </tr>
                             <tr>
                                 <td colspan="4">
-                                    <input type="hidden" name="user_id" value="{{ recipe.user.id }}">
                                     <input type="submit" value="submit" class="btn btn-warning">
                                 </td>
                             </tr>

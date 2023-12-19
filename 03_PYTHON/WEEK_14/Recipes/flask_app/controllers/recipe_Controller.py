@@ -20,8 +20,9 @@ def recipes_home():
     data = {
         "id" : session["user_id"]
     }
+    print("My 01 list of REC!")
     recipes = Recipe.get_all()
-    print("My list of REC!")
+    print("My 02 list of REC!")
 
     user=User.get_by_id(data)
 
@@ -76,11 +77,10 @@ def create_recipe():
 # 07 ROUTES | UPDATE (Process form) @@@@@@@@@@@@@@@@@@@@@@@@@@@
 @app.route("/recipes/update", methods=["POST"])
 def update_recipe():
-
     is_valid = Recipe.is_valid(request.form)
     if is_valid:
         print(request.form)
         Recipe.update_recipe(request.form)
         return redirect("/dashboard_02")
-
-    return redirect(f"/recipes/edit/{request.form["id"]}")
+        
+    return redirect("/recipes/edit/<recipe_id>")
