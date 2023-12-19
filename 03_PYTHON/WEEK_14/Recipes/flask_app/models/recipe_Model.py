@@ -92,12 +92,12 @@ class Recipe:
     
 #---crUd|UPDATE (UPDATE Recipes)---
     @classmethod
-    def update_recipe(cls, recipe_form_data):
-        query = """ UPDATE recipes
+    def update_recipe(cls, recipe_data):
+        query = """UPDATE recipes
         SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s
         WHERE id = %(id)s;"""
 
-        update_results = connectToMySQL(cls.DB).query_db(query, recipe_form_data)
+        update_results = connectToMySQL(cls.DB).query_db(query, recipe_data)
         return update_results
 
 #---cruD|DELETE (DELETE Recipes)---
