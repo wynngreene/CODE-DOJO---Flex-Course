@@ -44,13 +44,13 @@ def create_page():
     
     return render_template("create_recipe.html", user=user)
 
-# 04 ROUTES | Render Page with Edit Form @@@@@@@@@@@@@@@@@@@@@@@@@
+# 04 ROUTES | Render Page with Edit Form 
 @app.route("/recipes/edit/<recipe_id>")
 def edit_page(recipe_id):
     
     recipe = Recipe.get_one_recipe_id(recipe_id)
-    print("Let ME see the ID:", recipe)
     return render_template("edit_recipe.html", recipe=recipe)
+
 
 #GET Action Routes:
 # 05 ROUTES | Delete Route (GET request)
@@ -74,13 +74,12 @@ def create_recipe():
     return redirect("recipes/new")
 
 
-# 07 ROUTES | UPDATE (Process form) @@@@@@@@@@@@@@@@@@@@@@@@@@@
+# 07 ROUTES | UPDATE (Process form)
 @app.route("/recipes/update", methods=["POST"])
 def update_recipe():
     is_valid = Recipe.is_valid(request.form)
     if is_valid:
-        print(request.form)
         Recipe.update_recipe(request.form)
         return redirect("/dashboard_02")
         
-    return redirect("/recipes/edit/<recipe_id>")
+    return redirect(f"/recipes/edit/{request.form["id"]}")

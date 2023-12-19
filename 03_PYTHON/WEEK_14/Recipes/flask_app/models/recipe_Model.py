@@ -25,7 +25,7 @@ class Recipe:
         pass
         query = """SELECT * FROM recipes
         JOIN users on recipes.user_id = users.id
-        WHERE recipes.id = %(id)s"""
+        WHERE recipes.id = %(id)s;"""
 
         data = {
             "id":recipe_id
@@ -94,7 +94,7 @@ class Recipe:
     @classmethod
     def update_recipe(cls, recipe_data):
         query = """UPDATE recipes
-        SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s, updated_at = NOW(), 
+        SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s 
         WHERE id = %(id)s;"""
 
 

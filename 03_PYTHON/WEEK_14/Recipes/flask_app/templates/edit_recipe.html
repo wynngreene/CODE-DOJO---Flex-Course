@@ -19,8 +19,7 @@
 
         <main class="container">
             <br>
-            <h2>Edit Recipe</h2>
-            <input type="hidden" name="recipe_id" value="{{ recipe.id }}">
+            <h2>Edit for {{recipe.user.first_name}}'s Recipe</h2>
             <br>
             <div class="card bg-dark">
                 <div class="card-header text-white">
@@ -36,6 +35,7 @@
                 <div class="flex-fill">
                     <table class="table container">
                         <form action="/recipes/update" method="post">
+
                             <tr class="form-group">
                                 <th><label for="name">Name:</label></th>
                                 <td><input class="form-control" type="text" name="name" value="{{recipe.name}}"></td>
@@ -67,6 +67,7 @@
                             </tr>
                             <tr>
                                 <td colspan="4">
+                                    <input type="hidden" name="id" value="{{ recipe.id }}">
                                     <input type="submit" value="submit" class="btn btn-warning">
                                 </td>
                             </tr>
