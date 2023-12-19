@@ -92,9 +92,14 @@ class Recipe:
     
 #---crUd|UPDATE (UPDATE Recipes)---
     @classmethod
-    def update(cls):
-        pass
-        
+    def update_recipe(cls, recipe_form_data):
+        query = """ UPDATE recipes
+        SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s
+        WHERE id = %(id)s;"""
+
+        update_results = connectToMySQL(cls.DB).query_db(query, recipe_form_data)
+        return update_results
+
 #---cruD|DELETE (DELETE Recipes)---
     @classmethod
     def delete_by_recipe_id(cls, recipe_id):
@@ -105,3 +110,36 @@ class Recipe:
         }
         results = connectToMySQL(cls.DB).query_db(query, data)
         return
+
+#---VALIDATION (Valid Inputs)---
+    @staticmethod
+    def is_valid(recipe_dict):
+        valid = True
+
+        if len(recipe_dict["name"]) == 0:
+            valid = False
+            flash("Name is required.")
+
+        if len(recipe_dict["description"]) == 0:
+            valid = False
+            flash("Description is required.")
+        elif len(recipe_dict["description"]) < 3:
+            valid = False
+            flash("Description must be at least 3 characters.")
+
+        if len(recipe_dict["instructions"]) == 0:
+            valid = False
+            flash("Instructions are required.")
+        elif len(recipe_dict["instructions"]) < 3:
+            valid = False
+            flash("Instructions must be at least 3 characters.")
+
+        if len(recipe_dict["date_made"]) == 0:
+            valid = False
+            flash("Date is required.")
+
+        if "under_30" not in recipe_dict:
+            valid = False
+            flash("Recipe duration is required.")
+
+        return valid

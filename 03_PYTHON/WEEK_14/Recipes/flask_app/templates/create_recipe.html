@@ -24,50 +24,52 @@
             <div class="card bg-dark">
                 <div class="card-header text-white">
                     <h4>Enter All Information</h4>
+                    {% with messages = get_flashed_messages() %}
+                    {% for message in messages: %}
+                    <p class="alert alert-danger">{{message}}</p>
+                    {% endfor %}
+                    {% endwith %}
                 </div>
-                <!-- <div class="alert alert-danger">
-                    <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-                </div> -->
+
                 <div class="d-flex card-body bg-light">
                     <div class="flex-fill">
-
                     <table class="table container">
                         <form action="/recipes" method="post">
-                        <tr class="form-group">
-                            <th><label for="name">Name:</label></th>
-                            <td><input class="form-control" type="text" name="name"></td>
-                        </tr>
-                        <tr class="form-group">
-                            <th><label for="Description">Description:</label></th>
-                            <td><textarea class="form-control" rows="3" type="text"  name="description"></textarea></td>
-                        </tr>
-                        <tr class="form-group">
-                            <th><label for="Instructions">Instructions:</label></th>
-                            <td><textarea class="form-control" rows="3" type="text"  name="instructions"></textarea></td>
-                        </tr>
-                        <tr class="form-group">
-                            <th><label for="date_made">Date Cooked / Made:</label></th>
-                            <td>
-                                <input type="date" name="date_made">
-                            </td>
-                        </tr>
-                        <tr class="form-group">
-                            <th><label for="name">Under 30 Minutes?</label></th>
-                            <td colspan="2">
-                                <div class="d-flex">
-                                    <input type="radio" name="under_30" value="1">
-                                    <label for="html">Yes</label>
-                                    <input type="radio"  name="under_30" value="0">
-                                    <label for="css">No</label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">
-                                <input type="hidden" name="user_id" value="{{ user }}">
-                                <input type="submit" value="submit" class="btn btn-warning">
-                            </td>
-                        </tr>
+                            <tr class="form-group">
+                                <th><label for="name">Name:</label></th>
+                                <td><input class="form-control" type="text" name="name"></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="Description">Description:</label></th>
+                                <td><textarea class="form-control" rows="3" type="text"  name="description"></textarea></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="Instructions">Instructions:</label></th>
+                                <td><textarea class="form-control" rows="3" type="text"  name="instructions"></textarea></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="date_made">Date Cooked / Made:</label></th>
+                                <td>
+                                    <input type="date" name="date_made">
+                                </td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="name">Under 30 Minutes?</label></th>
+                                <td colspan="2">
+                                    <div class="d-flex">
+                                        <input type="radio" name="under_30" value="1">
+                                        <label for="html">Yes</label>
+                                        <input type="radio"  name="under_30" value="0">
+                                        <label for="css">No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="hidden" name="user_id" value="{{ user }}">
+                                    <input type="submit" value="submit" class="btn btn-warning">
+                                </td>
+                            </tr>
                         </form>
                     </table>
                     </div>

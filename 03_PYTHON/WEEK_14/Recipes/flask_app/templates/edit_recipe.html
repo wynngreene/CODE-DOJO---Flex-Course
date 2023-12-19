@@ -24,51 +24,56 @@
             <div class="card bg-dark">
                 <div class="card-header text-white">
                     <h4>Enter All Information</h4>
-                </div>
-                <div class="alert alert-danger">
-                    <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-                </div>
-                <div class="d-flex card-body bg-light">
-                    <div class="flex-fill">
-                        <form action="/recipes/update" method="POST">
-                            <table class="table container">
-                                <!-- Replace HArd CODE-->
-                                <input type="hidden" name="id" value="2">
-                                <tr class="form-group">
-                                    <th><label for="name">Name:</label></th>
-                                    <td><input class="form-control" type="text" name="name" value="{{recipe.name}}"></td>
-                                </tr>
-                                <tr class="form-group">
-                                    <th><label for="Description">Description:</label></th>
-                                    <td><textarea class="form-control" rows="3" type="text" name="description" value="{{recipe.description}}"></textarea></td>
-                                </tr>
-                                <tr class="form-group">
-                                    <th><label for="Instructions">Instructions:</label></th>
-                                    <td><textarea class="form-control" rows="3" type="text" name="instructions" value="{{recipe.instructions}}"></textarea></td>
-                                </tr>
+                    {% with messages = get_flashed_messages() %}
+                    {% for message in messages: %}
+                    <p class="alert alert-danger">{{message}}</p>
+                    {% endfor %}
+                    {% endwith %}
+            </div>
 
-                            </table>
+            <div class="d-flex card-body bg-light">
+                <div class="flex-fill">
+                    <table class="table container">
+                        <form action="/recipes/update" method="post">
+                            <tr class="form-group">
+                                <th><label for="name">Name:</label></th>
+                                <td><input class="form-control" type="text" name="name" value="{{recipe.name}}"></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="Description">Description:</label></th>
+                                <td><textarea class="form-control" rows="3" type="text"  name="description" >{{recipe.description}}</textarea></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="Instructions">Instructions:</label></th>
+                                <td><textarea class="form-control" rows="3" type="text"  name="instructions">{{recipe.instructions}}</textarea></td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="date_made">Date Cooked / Made:</label></th>
+                                <td>
+                                    <input type="date" name="date_made" value="{{recipe.date_made}}">
+                                </td>
+                            </tr>
+                            <tr class="form-group">
+                                <th><label for="name">Under 30 Minutes?</label></th>
+                                <td colspan="2">
+                                    <div class="d-flex">
+                                        <input type="radio" name="under_30" value="1">
+                                        <label for="yes">Yes</label>
+                                        <input type="radio"  name="under_30" value="0">
+                                        <label for="no">No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="submit" value="submit" class="btn btn-warning">
+                                </td>
+                            </tr>
                         </form>
-                    </div>
-                    <div class="flex-fill p-3" style="text-align:center;">
-                        <div>
-                            <h5>Date Cooked/Made</h5>
-                            <label for="birthday">Birthday:</label>
-                            <input type="date" id="birthday" name="birthday">
-                        </div>
-                        <br>
-                        <div>
-                            <h5>Under 30 Minutes?</h5>
-                            <label for="yes" class="form-label">Yes</label>
-                            <input type="radio" name="under_30" value="1" id="yes">
-                            <label for="no" class="form-label">No</label>
-                            <input type="radio" name="under_30" value="0" id="no">
-                        </div>
-                    </div>
+                    </table>
                 </div>
-                <div class="p-3">
-                    <input type="submit" class="btn btn-warning" value="Update">
-                </div>
+            </div>
+            <div class="p-3">
             </div>
         </main>
 
