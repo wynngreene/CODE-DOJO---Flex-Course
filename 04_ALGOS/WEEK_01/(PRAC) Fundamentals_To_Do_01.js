@@ -51,7 +51,13 @@ three_Count_Five_Ten();
 //Given lowNum, highNum, mult, print multiples of mult from highNum down to lowNum, using a FOR. For (2,9,3), print 9 6 3 (on successive lines).
 
 function four_Countdown(lowNum, highNum, multNum)
-{
+    {
+        for(let i = lowNum; i < highNum; i++){
+            if(i % multNum == 0){
+            console.log(i);
+            }
+        }
+        console.log(highNum);
+    }
 
-}
-
+four_Countdown(2,9,3);
