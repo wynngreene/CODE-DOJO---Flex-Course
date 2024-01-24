@@ -1,10 +1,16 @@
-//1. Multiples of Three – but Not All
+//1. Multiples of Three – but Not All - DONE!!!
 //Using FOR, print multiples of 3 from -300 to 0. Skip -3 and -6.
 
 function one_multi_Three()
 {
-
+    for (let i = -300; i < 0; i++)
+        {
+            if (i != -3 && i != -6 )
+        console.log("current number is " + i );
+        }
 }
+
+one_multi_Three();
 
 //2. Printing Integers with While
 //Print integers from 2000 to 5280, using a WHILE.
