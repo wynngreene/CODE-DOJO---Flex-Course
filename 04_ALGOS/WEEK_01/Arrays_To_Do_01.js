@@ -20,7 +20,7 @@ array_Shuffle_Two([17, 62, 28, 94]);
 function skyline_View(arr_build_hts){
     let max_build_ht = 0;
     let visible_builds = [];
- 
+
     for (let i = 0; i < arr_build_hts.length; i++){
         console.log("Max is at " + max_build_ht);
         if (arr_build_hts[i] > max_build_ht){
