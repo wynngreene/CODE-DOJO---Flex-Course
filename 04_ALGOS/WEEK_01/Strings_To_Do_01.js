@@ -35,7 +35,7 @@ function zip_Array(array_1, array_2){
 
 }
 
-zip_Array(["abc", 3, "yo"], [42, "wassup", true]);
+//zip_Array(["abc", 3, "yo"], [42, "wassup", true]);
 
 // Invert Hash
 
