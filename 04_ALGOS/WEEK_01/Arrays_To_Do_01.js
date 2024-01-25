@@ -1,41 +1,47 @@
+//Shuffle | DONE!
+function array_Shuffle_One(one_Array){
+    // thats new!!!
+    array.sort(() => Math.random() - 0.5);
+    console.log(array);
+}
+array_Shuffle([17, 62, 28, 94]);
 
-//Shuffle
-//In JavaScript, the Array object has numerous useful methods.
-//It does not, however, contain a method that will randomize
-//the order of an array’s elements. Let’s create shuffle(arr),
-//to efficiently shuffle a given array’s values. Work in-place,
-//naturally. Do you need to return anything from your function?
-
-//ANSWER
-// Yes, we would need the results of the shuffled Array (Result).
+//Fisher–Yates shuffle
+function array_Shuffle_Two(Two_Array){
+        for(let i = Two_Array - 1; i > 0; i--){
+            let random_Num = Math.floor(Math.random() * (i + 1));
+            [Two_Array[i]], [Two_Array[random_Num]] = [Two_Array[random_Num]], [Two_Array[i]]
+        }
+    }
+array_Shuffle_Two([17, 62, 28, 94]);
 
 
 //Skyline Heights
-//Lovely Burbank has a breathtaking view of the Los Angeles skyline.
-//Let’s say you are given an array with heights of consecutive buildings,
-//starting closest to you and extending away. Array [-1,7,3] would
-//represent three buildings: first is actually out of view below street
-//level, behind it is second at 7 stories high, third is 3 stories
-//high (hidden behind the 7-story). You are situated at street level.
-//Return array containing heights of buildings you can see, in order.
-//Given [-1,1,1,7,3] return [1,7]. Given [0,4] return [4].
-//As always with challenges, do not use built-in array functions such as unshift().
-
-function skyline_View(array_One){
-    
+function skyline_View(arr_build_hts){
+    let max_build_ht = 0;
+    let visible_builds = [];
+ 
+    for (let i = 0; i < arr_build_hts.length; i++){
+        console.log("Max is at " + max_build_ht);
+        if (arr_build_hts[i] > max_build_ht){
+            //Set to new number.
+            max_build_ht = (arr_build_hts[i]);
+            console.log("New_Max " + max_build_ht);
+            visible_builds.push(arr_build_hts[i]);
+            }
+        else console.log("Array " + arr_build_hts[i]);
+    }
+    console.log("New" + visible_builds);
 }
+let my_Arr = [1,2,9,7,8];
+skyline_View(my_Arr);
 
 
-//Zip It
-//Create a standalone function that accepts two arrays and combines
-//their values sequentially into a new array. Extra values from either
-//array should be included afterward. Given [4,15,100] and [10,20,30,40],
-//return new array containing [4,10,15,20,30,40,100].
-
+//Zip It | DONE!
 function combine_Array(array_One, array_Two){
-
+    let combo_Array = array_One.concat(array_Two);
+    console.log(combo_Array.sort());
 }
-
-
-//Credit Card Validation (Bonus)
-//The Luhn formula is sometimes used to validate credit card numbers. Create the function isCreditCardValid(digitArr) that accepts an array of digits on the card (13-19 depending on the card), and returns a boolean whether the card digits satisfy the Luhn formula, as follows:
+arr1 = [20, 35, 50]
+arr2 = [15, 34, 44]
+combine_Array(arr1, arr2)
