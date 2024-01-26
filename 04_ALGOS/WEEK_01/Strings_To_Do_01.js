@@ -14,30 +14,21 @@ function remove_Chars(){
 }
 remove_Chars();
 
-// Acronyms
-// function change_Chars(){
-//     let my_String = "Fear of Missing Out";
-//     let new_String = my_String
-//     .split(" ")
-//     .map(my_String.charAt(0).toUpperCase())
-//     .join("");
-//     console.log(new_String);
-// };
-// change_Chars();
+// Acronyms | 
 
-// Zip Arrays into Dictionary
 
-// arr1 = ["abc", 3, "yo"]
-// arr2 = [42, "wassup", true]
-// return {"abc": 42, 3: "wassup", "yo": true}
+// Zip Arrays into Dictionary | 
 
-function zip_Array(array_1, array_2){
 
+// Invert Hash | DONE!
+let my_Object = {
+    "name": "Zaphod",
+    "charm": "high",
+    "morals": "dicey"
 }
 
-//zip_Array(["abc", 3, "yo"], [42, "wassup", true]);
+let swapped_Object = Object
+    .fromEntries(Object.entries(my_Object)
+    .map(a => a.reverse())); // Arrow function expressions!!!
 
-// Invert Hash
-
-// Example: given {"name": "Zaphod", "charm": "high", "morals": "dicey"}
-// return object {"Zaphod": "name", "high":"charm", "dicey": "morals"}
+console.log(swapped_Object);
