@@ -15,7 +15,20 @@ function remove_Chars(){
 remove_Chars();
 
 // Acronyms | 
+function arconym_String(my_String){
+    let string_ph_01 = my_String.split(" ");
+    console.log(string_ph_01);
+    let string_ph_02 = string_ph_01.map(string_First_Letter);
+    console.log(string_ph_02);
+    return string_ph_02.join("").toUpperCase();
+};
 
+function string_First_Letter(this_String){
+    return this_String[0];
+};
+
+let string_Enter = "bilbo baggins my ring bearer."
+console.log(arconym_String(string_Enter));
 
 // Zip Arrays into Dictionary | 
 
