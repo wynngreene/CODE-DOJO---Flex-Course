@@ -1,27 +1,58 @@
-class Node {
-    constructor(data) {
-        this.data = data;
+class SLLNode {
+    constructor(val) {
+        this.value = val;
         this.next = null;              
     }
 }
-class LinkedList {
-    constructor() {
-        this.head = null;
+
+
+class SLL {
+    constructor(){
+    this.head = null;
     }
-    addFront(val){
-        //Creating a new node object with the value provided
-        new_node= new Node(val);
-        //Checking to see if the current list does not have a head node (if the list is empty)
-        //If the list is empty, place the new node as the head 
-        if(!this.head){
-            this.head=new_node ;
-            return this;
-        }
-        //If the list is not empty, assign the head to be the next node to the new node (Blue Arrow in picture above)
-        new_node.next=this.head;
-        //Then finally assign the new_node to be the new head of the list (Red Arrow in picture above)
-        this.head=new_node;
-        return self;
+    // All Methods built into your class here.
+    // Adds a node to the front
+    addFront(value){
+        var newNode = new SLLNode(value);
+        newNode.next = this.head;
+        this.head = newNode;
+        return this.head // OR you can say return this;
     }
+
+    // Remove a node from the front of the list
+    removeFront(){
+        if (this.head ==null){
+            return this.head;
+        }
+        var removeNode = this.head; // Have a variable hold the node we'll remove
+        this.head = removeNode.next; //Move the head of the list to the 2nd node, which will become the new head when we're down
+        removeNode.next = null;
+        return this.head;
+    }
+    // Return the value at the front (head) of the list.
+    front(){
+        // Edge case: List is empty.
+        if (this.head == null){
+            return null;
+        }
+        else { // List is not empty.
+            return this.head.value;
+        }
+        // Ternary operator: condition ? value_if_true : value_if_false
+        // return this.head ? this.head.value : null;
+        
+    }
+
 }
 
+var mySLL = new SLL(); //Starts us off with an empty list
+
+mySLL.addFront(10);
+mySLL.addFront(5);
+mySLL.addFront(3);
+mySLL.removeFront();
+// mySLL.addFront(5);
+// mySLL.addFront(3);
+
+console.log(mySLL);
+// console.log(mySLL.head.next);
