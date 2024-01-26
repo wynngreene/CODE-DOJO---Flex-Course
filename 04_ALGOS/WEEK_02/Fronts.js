@@ -38,22 +38,6 @@ class SLL {
         }
     }
 
-/////////////////// SLL Utilities ///////////////////////
-
-    // constructor, other methods, removed for brevity
-    contains(value) {
-    // is "value" to be found anywhere in this list?
-    }
-
-    // constructor, other methods, removed for brevity
-    length() {
-    // how many nodes in a list?
-    }
-
-    // constructor, other methods, removed for brevity
-    display() {
-    // neatly display nodes in my list
-    }
 }
 
 var mySLL = new SLL(); //Starts us off with an empty list
