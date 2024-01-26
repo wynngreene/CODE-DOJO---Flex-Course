@@ -14,7 +14,7 @@ function remove_Chars(){
 }
 remove_Chars();
 
-// Acronyms | 
+// Acronyms | DONE!
 function arconym_String(my_String){
     let string_ph_01 = my_String.split(" ");
     console.log(string_ph_01);
@@ -30,7 +30,20 @@ function string_First_Letter(this_String){
 let string_Enter = "bilbo baggins my ring bearer."
 console.log(arconym_String(string_Enter));
 
-// Zip Arrays into Dictionary | 
+// Zip Arrays into Dictionary | DONE!
+function zip_Array(array_01, array_02){
+    let combined_Object = {};
+    for (let i = 0; i < array_01.length; i++){
+    combined_Object[array_01[i].toString()] = array_02[i];
+    }
+    return combined_Object;
+}
+
+let arr1 = ["01","02","03"];
+let arr2 = ["0A","0B","0C"];
+
+console.log(zip_Array(arr1,arr2));
+
 
 
 // Invert Hash | DONE!
