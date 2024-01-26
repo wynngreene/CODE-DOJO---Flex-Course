@@ -10,15 +10,13 @@ class SLL {
     constructor(){
     this.head = null;
     }
-    // All Methods built into your class here.
-    // Adds a node to the front
+    // All Methods built into your class here. Adds a node to the front
     addFront(value){
         var newNode = new SLLNode(value);
         newNode.next = this.head;
         this.head = newNode;
         return this.head // OR you can say return this;
     }
-
     // Remove a node from the front of the list
     removeFront(){
         if (this.head ==null){
@@ -38,11 +36,24 @@ class SLL {
         else { // List is not empty.
             return this.head.value;
         }
-        // Ternary operator: condition ? value_if_true : value_if_false
-        // return this.head ? this.head.value : null;
-        
     }
 
+/////////////////// SLL Utilities ///////////////////////
+
+    // constructor, other methods, removed for brevity
+    contains(value) {
+    // is "value" to be found anywhere in this list?
+    }
+
+    // constructor, other methods, removed for brevity
+    length() {
+    // how many nodes in a list?
+    }
+
+    // constructor, other methods, removed for brevity
+    display() {
+    // neatly display nodes in my list
+    }
 }
 
 var mySLL = new SLL(); //Starts us off with an empty list
@@ -51,8 +62,5 @@ mySLL.addFront(10);
 mySLL.addFront(5);
 mySLL.addFront(3);
 mySLL.removeFront();
-// mySLL.addFront(5);
-// mySLL.addFront(3);
-
 console.log(mySLL);
 // console.log(mySLL.head.next);
