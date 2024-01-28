@@ -5,7 +5,6 @@ class SLLNode {
     }
 }
 
-
 class SLL {
     constructor(){
     this.head = null;
@@ -42,17 +41,34 @@ class SLL {
 
     // constructor, other methods, removed for brevity
     contains(value) {
-    // is "value" to be found anywhere in this list?
+        let runner = this.head;// is "value" to be found anywhere in this list?
+        while (runner !== null) {
+                if (runner.value == value){
+                    return true;
+                }
+                runner = runner.next;
+            }
+            return false;
     }
 
     // constructor, other methods, removed for brevity
     length() {
-    // how many nodes in a list?
+        let length = 0;
+        let runner = this.head;// how many nodes in a list?
+        while (runner !== null) {
+            length++;
+            runner = runner.next;
+            }
+            return length;
     }
 
     // constructor, other methods, removed for brevity
     display() {
-    // neatly display nodes in my list
+    let runner = this.head;// neatly display nodes in my list
+    while (runner !== null) {
+        runner = runner.next;
+        console.log(runner.value);
+        }
     }
 }
 
